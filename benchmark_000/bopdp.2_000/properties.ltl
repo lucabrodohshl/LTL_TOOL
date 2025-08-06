@@ -1,0 +1,8 @@
+!(![](("IOP==actv") -> (("IOP==stand_by") R (!("IOP==noise") || ("IOP==stand_by")))))
+!(![]((("sleep_op==0") && ("sleeping==0")) -> (!("sleep_op==0") R (!("sleep_op==0") || ("sleeping==0")))))
+!([]((("sleep_op==0") && ("sleeping==0")) -> (!("sleep_op==0") R (!("sleep_op==0") || ("sleeping==0")))))
+!([](("IOP==stand_by") -> ((("IOP==back_to_actv") || ("IOP==now_wait")) R (!("IOP==actv") || ("IOP==back_to_actv") || ("IOP==now_wait")))))
+!([]((("sleeping==0") && (("ap_interrupt==1") || ("lsl_interrupt==1"))) -> (!(("ap_interrupt==1") || ("lsl_interrupt==1")) R (("sleeping==0") || !(("ap_interrupt==1") || ("lsl_interrupt==1"))))))
+!(![]((("sleeping==0") && (("ap_interrupt==1") || ("lsl_interrupt==1"))) -> (!(("ap_interrupt==1") || ("lsl_interrupt==1")) R (("sleeping==0") || !(("ap_interrupt==1") || ("lsl_interrupt==1"))))))
+!([](("IOP==actv") -> (("IOP==stand_by") R (!("IOP==noise") || ("IOP==stand_by")))))
+!(![](("IOP==stand_by") -> ((("IOP==back_to_actv") || ("IOP==now_wait")) R (!("IOP==actv") || ("IOP==back_to_actv") || ("IOP==now_wait")))))
