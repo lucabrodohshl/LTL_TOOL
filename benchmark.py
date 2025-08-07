@@ -10,8 +10,8 @@ from tqdm import tqdm
 import concurrent.futures
 import multiprocessing
 SRC_FOLDER = "./benchmark_000"
-CSV_OUTPUT = "timing_summary.csv"
-RES_FOLDER = "./result"
+CSV_OUTPUT = "baseline_timing_summary.csv"
+RES_FOLDER = "./baseline_result"
 model_temp_dir = "models_dir"
 TIMEOUTS = 1000
 

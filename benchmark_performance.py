@@ -7,42 +7,54 @@ across multiple benchmarks and generate comprehensive reports.
 
 import os
 import time
-import json
 import pandas as pd
 from typing import Dict, List
 from ltl_optimizer import LTLOptimizer, OptimizationMetrics
 
 
-def create_performance_report(results: Dict[str, OptimizationMetrics], output_file: str = "performance_report.json"):
+def create_detailed_csv_report(results: Dict[str, OptimizationMetrics], result_folder: str):
     """
-    Create a comprehensive performance report from benchmark results.
+    Create detailed CSV reports from benchmark results.
     
     Args:
         results: Dictionary mapping benchmark names to OptimizationMetrics
-        output_file: Output file for the report
+        result_folder: Folder to save detailed CSV reports
     """
-    report = {
-        "summary": {
-            "total_benchmarks": len(results),
-            "total_formulas": sum(m.total_formulas for m in results.values()),
-            "total_time": sum(m.total_time for m in results.values()),
-            "average_reduction": sum(m.reduction_percentage for m in results.values()) / len(results) if results else 0,
-            "best_reduction": max((m.reduction_percentage for m in results.values()), default=0),
-            "worst_reduction": min((m.reduction_percentage for m in results.values()), default=0),
-        },
-        "per_benchmark": {name: metrics.to_dict() for name, metrics in results.items()},
-        "performance_analysis": {
-            "avg_time_per_formula": sum(m.total_time / m.total_formulas for m in results.values() if m.total_formulas > 0) / len(results) if results else 0,
-            "avg_equivalence_class_time": sum(m.equivalence_class_time for m in results.values()) / len(results) if results else 0,
-            "avg_containment_time": sum(m.containment_analysis_time for m in results.values()) / len(results) if results else 0,
-        }
+    # Overall summary data
+    summary_data = {
+        "total_benchmarks": len(results),
+        "total_formulas": sum(m.total_formulas for m in results.values()),
+        "total_time": sum(m.total_time for m in results.values()),
+        "average_reduction": sum(m.reduction_percentage for m in results.values()) / len(results) if results else 0,
+        "best_reduction": max((m.reduction_percentage for m in results.values()), default=0),
+        "worst_reduction": min((m.reduction_percentage for m in results.values()), default=0),
+        "avg_time_per_formula": sum(m.total_time / m.total_formulas for m in results.values() if m.total_formulas > 0) / len(results) if results else 0,
+        "avg_equivalence_class_time": sum(m.equivalence_class_time for m in results.values()) / len(results) if results else 0,
+        "avg_containment_time": sum(m.containment_analysis_time for m in results.values()) / len(results) if results else 0,
     }
     
-    with open(output_file, 'w') as f:
-        json.dump(report, f, indent=2)
+    # Save overall summary as CSV
+    summary_df = pd.DataFrame([summary_data])
+    summary_path = os.path.join(result_folder, "overall_summary.csv")
+    summary_df.to_csv(summary_path, index=False)
+    print(f"Overall summary saved to: {summary_path}")
     
-    print(f"Performance report saved to: {output_file}")
-    return report
+    # Save performance analysis as CSV
+    performance_data = []
+    for benchmark_name, metrics in results.items():
+        performance_data.append({
+            "benchmark": benchmark_name,
+            "time_per_formula": metrics.total_time / metrics.total_formulas if metrics.total_formulas > 0 else 0,
+            "equivalence_class_time": metrics.equivalence_class_time,
+            "containment_analysis_time": metrics.containment_analysis_time,
+            "total_time": metrics.total_time,
+            "reduction_efficiency": metrics.reduction_percentage / metrics.total_time if metrics.total_time > 0 else 0
+        })
+    
+    performance_df = pd.DataFrame(performance_data)
+    performance_path = os.path.join(result_folder, "performance_analysis.csv")
+    performance_df.to_csv(performance_path, index=False)
+    print(f"Performance analysis saved to: {performance_path}")
 
 
 def create_csv_summary(results: Dict[str, OptimizationMetrics], output_file: str = "benchmark_summary.csv"):
@@ -110,31 +122,38 @@ def print_performance_summary(results: Dict[str, OptimizationMetrics]):
 def main():
     """Main benchmark execution function."""
     
-    # Configuration
+    # Configuration - using same folder structure as example_usage.py
     BENCHMARK_FOLDER = "benchmark_000"
-    OUTPUT_DIR = "benchmark_results"
-    ENABLE_VISUALIZATION = False  # Set to True for visual analysis
+    LTL_OUTPUT_FOLDER = "minimal_ltl"
+    GRAPH_OUTPUT_FOLDER = "minimal_graph"  
+    RESULT_FOLDER = "optimized_results"
+    BENCHMARK_SPECIFIC_FOLDER = os.path.join(RESULT_FOLDER, "benchmark_specific")
     
-    # Create output directory
-    if not os.path.exists(OUTPUT_DIR):
-        os.makedirs(OUTPUT_DIR)
+    # Create output directories
+    for folder in [LTL_OUTPUT_FOLDER, GRAPH_OUTPUT_FOLDER, RESULT_FOLDER, BENCHMARK_SPECIFIC_FOLDER]:
+        if not os.path.exists(folder):
+            os.makedirs(folder)
     
-    # Initialize optimizer
+    # Initialize optimizer - save graphs but don't visualize
     optimizer = LTLOptimizer(
-        enable_visualization=ENABLE_VISUALIZATION,
+        enable_visualization=False,  # Don't show graphs
+        save_graphs=True,           # Save graphs to files
         verbose=True
     )
     
     print(f"Starting benchmark analysis on folder: {BENCHMARK_FOLDER}")
-    print(f"Results will be saved to: {OUTPUT_DIR}")
-    print(f"Visualization enabled: {ENABLE_VISUALIZATION}")
+    print(f"LTL outputs will be saved to: {LTL_OUTPUT_FOLDER}")
+    print(f"Graphs will be saved to: {GRAPH_OUTPUT_FOLDER}")
+    print(f"Results will be saved to: {RESULT_FOLDER}")
     print("-" * 80)
     
     # Process all benchmarks
     start_time = time.time()
     results = optimizer.process_multiple_benchmarks(
         benchmark_folder=BENCHMARK_FOLDER,
-        output_dir=OUTPUT_DIR
+        ltl_output_folder=LTL_OUTPUT_FOLDER,
+        graph_output_folder=GRAPH_OUTPUT_FOLDER,
+        result_folder=RESULT_FOLDER
     )
     total_time = time.time() - start_time
     
@@ -142,24 +161,18 @@ def main():
         print("No benchmarks were successfully processed.")
         return
     
-    # Generate reports
+    # Generate reports - all as CSV
     print(f"\nProcessing completed in {total_time:.2f} seconds")
-    print("Generating reports...")
-    
-    # Performance report (JSON)
-    report = create_performance_report(
-        results, 
-        os.path.join(OUTPUT_DIR, "performance_report.json")
-    )
+    print("Generating CSV reports...")
     
     # CSV summary
-    try:
-        df = create_csv_summary(
-            results, 
-            os.path.join(OUTPUT_DIR, "benchmark_summary.csv")
-        )
-    except ImportError:
-        print("pandas not available, skipping CSV summary")
+    df = create_csv_summary(
+        results, 
+        os.path.join(RESULT_FOLDER, "benchmark_summary.csv")
+    )
+    
+    # Create detailed CSV report instead of JSON
+    create_detailed_csv_report(results, RESULT_FOLDER)
     
     # Console summary
     print_performance_summary(results)

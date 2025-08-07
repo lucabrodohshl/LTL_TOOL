@@ -1,0 +1,9 @@
+,formula,time,result
+0,"!([](((""sleep_op==0"") && (""sleeping==0"")) -> (!(""sleep_op==0"") R (!(""sleep_op==0"") || (""sleeping==0"")))))",0.08888974506407976,False
+1,"!(![](((""sleeping==0"") && ((""ap_interrupt==1"") || (""lsl_interrupt==1""))) -> (!((""ap_interrupt==1"") || (""lsl_interrupt==1"")) R ((""sleeping==0"") || !((""ap_interrupt==1"") || (""lsl_interrupt==1""))))))",0.034957778989337385,True
+2,"!(![](((""sleep_op==0"") && (""sleeping==0"")) -> (!(""sleep_op==0"") R (!(""sleep_op==0"") || (""sleeping==0"")))))",0.027536640991456807,True
+3,"!(![]((""IOP==actv"") -> ((""IOP==stand_by"") R (!(""IOP==noise"") || (""IOP==stand_by"")))))",1000.0,
+4,"!([]((""IOP==stand_by"") -> (((""IOP==back_to_actv"") || (""IOP==now_wait"")) R (!(""IOP==actv"") || (""IOP==back_to_actv"") || (""IOP==now_wait"")))))",1000.0,
+5,"!(![]((""IOP==stand_by"") -> (((""IOP==back_to_actv"") || (""IOP==now_wait"")) R (!(""IOP==actv"") || (""IOP==back_to_actv"") || (""IOP==now_wait"")))))",1000.0,
+6,"!([]((""IOP==actv"") -> ((""IOP==stand_by"") R (!(""IOP==noise"") || (""IOP==stand_by"")))))",1000.0,
+7,"!([](((""sleeping==0"") && ((""ap_interrupt==1"") || (""lsl_interrupt==1""))) -> (!((""ap_interrupt==1"") || (""lsl_interrupt==1"")) R ((""sleeping==0"") || !((""ap_interrupt==1"") || (""lsl_interrupt==1""))))))",0.0264832959510386,False

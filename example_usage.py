@@ -14,14 +14,19 @@ def example_single_benchmark():
     """Example: Analyze a single benchmark."""
     
     # Initialize optimizer with visualization enabled for this example
-    optimizer = LTLOptimizer(enable_visualization=False, verbose=True)
+    optimizer = LTLOptimizer(enable_visualization=False, verbose=True, save_graphs=True)
     
     # Example: Process a single benchmark folder
     benchmark_path = os.path.join("benchmark_000", "anderson.1_000")
     
     if os.path.exists(benchmark_path):
         print(f"Analyzing benchmark: {benchmark_path}")
-        metrics = optimizer.process_benchmark_folder(benchmark_path)
+        metrics = optimizer.process_benchmark_folder(benchmark_path,
+                                                    ltl_output_folder = "minimal_ltl",
+                                                    graph_output_folder = "minimal_graph",
+                                                    result_folder = "optimized_results",
+                                            
+                                                    )   
         
         # Access specific metrics
         print(f"\nKey Results:")
@@ -30,8 +35,8 @@ def example_single_benchmark():
         print(f"Formulas: {metrics.original_formula_count} → {metrics.optimized_formula_count}")
         
         # Save metrics to file
-        metrics.save_to_json("anderson_example_metrics.json")
-        print("Metrics saved to anderson_example_metrics.json")
+        metrics.save_to_csv("anderson_example_metrics.csv")
+        print("Metrics saved to anderson_example_metrics.csv")
     else:
         print(f"Benchmark folder not found: {benchmark_path}")
 
@@ -100,17 +105,17 @@ def main():
     print("-" * 30)
     example_single_benchmark()
     
-    # Example 2: Custom formulas
-    print("\n\n2. Custom Formula Set Analysis")
-    print("-" * 30)
-    example_custom_formulas()
+    ## Example 2: Custom formulas
+    #print("\n\n2. Custom Formula Set Analysis")
+    #print("-" * 30)
+    #example_custom_formulas()
     
-    # Example 3: Performance measurement
-    print("\n\n3. Performance Measurement")
-    print("-" * 30)
-    example_performance_measurement()
-    
-    print("\n\nAll examples completed!")
+    ## Example 3: Performance measurement
+    #print("\n\n3. Performance Measurement")
+    #print("-" * 30)
+    #example_performance_measurement()
+    #
+    #print("\n\nAll examples completed!")
 
 
 if __name__ == "__main__":

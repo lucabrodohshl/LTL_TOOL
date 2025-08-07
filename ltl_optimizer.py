@@ -8,6 +8,7 @@ using automata-based equivalence classes and containment analysis.
 import spot
 import time
 import json
+import pandas as pd
 import os
 from collections import defaultdict
 from dataclasses import dataclass, asdict
@@ -40,14 +41,46 @@ class OptimizationMetrics:
     # Per-class details
     class_reductions: List[Dict[str, Any]]
     
+    # Output folders
+    ltl_output_folder: Optional[str] = None
+    graph_output_folder: Optional[str] = None
+    result_folder: Optional[str] = None
+    
     def to_dict(self) -> Dict[str, Any]:
         """Convert metrics to dictionary for serialization."""
         return asdict(self)
     
-    def save_to_json(self, filepath: str) -> None:
-        """Save metrics to JSON file."""
-        with open(filepath, 'w') as f:
-            json.dump(self.to_dict(), f, indent=2)
+    def save_to_csv(self, filepath: str) -> None:
+        """Save metrics to CSV file using pandas."""
+        # Use result_folder if specified, otherwise use filepath directory
+        if self.result_folder:
+            # Create benchmark_specific subfolder for individual benchmark results
+            benchmark_specific_folder = os.path.join(self.result_folder, "benchmark_specific")
+            os.makedirs(benchmark_specific_folder, exist_ok=True)
+            filename = os.path.basename(filepath)
+            base_path = os.path.join(benchmark_specific_folder, filename)
+        else:
+            base_path = filepath
+            
+        # Save main metrics (excluding class_reductions)
+        metrics_dict = self.to_dict().copy()
+        class_reductions = metrics_dict.pop('class_reductions')
+        
+        # Remove folder paths from the saved metrics to avoid clutter
+        metrics_dict.pop('ltl_output_folder', None)
+        metrics_dict.pop('graph_output_folder', None)
+        metrics_dict.pop('result_folder', None)
+        
+        # Save main metrics as single-row CSV
+        main_metrics_df = pd.DataFrame([metrics_dict])
+        main_metrics_path = base_path.replace('.json', '_summary.csv') if base_path.endswith('.json') else base_path.replace('.csv', '_summary.csv')
+        main_metrics_df.to_csv(main_metrics_path, index=False)
+        
+        # Save class reductions as separate CSV
+        if class_reductions:
+            class_reductions_df = pd.DataFrame(class_reductions)
+            class_reductions_path = base_path.replace('.json', '_class_reductions.csv') if base_path.endswith('.json') else base_path.replace('.csv', '_class_reductions.csv')
+            class_reductions_df.to_csv(class_reductions_path, index=False)
 
 
 class DisjointSetUnion:
@@ -78,15 +111,17 @@ class LTLOptimizer:
     4. Measure optimization performance and results
     """
     
-    def __init__(self, enable_visualization: bool = False, verbose: bool = True):
+    def __init__(self, enable_visualization: bool = False, save_graphs: bool = False, verbose: bool = True):
         """
         Initialize the LTL Optimizer.
         
         Args:
             enable_visualization: Whether to generate NetworkX visualizations
+            save_graphs: Whether to save graphs to files (requires graph_output_folder)
             verbose: Whether to show progress bars and detailed output
         """
         self.enable_visualization = enable_visualization
+        self.save_graphs = save_graphs
         self.verbose = verbose
         self.metrics: Optional[OptimizationMetrics] = None
         
@@ -223,43 +258,90 @@ class LTLOptimizer:
         
         return [i for i in range(len(edges)) if i not in dominated]
     
-    def _visualize_containment_graph(self, edges: List[Set[int]], formulas: List[str], class_rep: int) -> None:
+    def _save_minimal_formulas(self, formulas: List[str], minimal_indices: List[int], 
+                              benchmark_name: str, ltl_output_folder: str) -> None:
         """
-        Create NetworkX visualization of containment graph.
+        Save minimal formulas to an LTL file.
+        
+        Args:
+            formulas: Original list of formulas
+            minimal_indices: Indices of minimal formulas to save
+            benchmark_name: Name of the benchmark
+            ltl_output_folder: Folder to save the LTL file
+        """
+        if not ltl_output_folder:
+            return
+            
+        os.makedirs(ltl_output_folder, exist_ok=True)
+        output_file = os.path.join(ltl_output_folder, f"{benchmark_name}_minimal.ltl")
+        
+        with open(output_file, 'w') as f:
+            for idx in minimal_indices:
+                f.write(f"{formulas[idx]}\n")
+    
+    def _save_containment_graph(self, edges: List[Set[int]], formulas: List[str], 
+                               formula_indices: List[int], class_rep: int, 
+                               graph_output_folder: str, benchmark_name: str) -> None:
+        """
+        Save NetworkX visualization of containment graph to file.
         
         Args:
             edges: Adjacency list representation of containment graph
-            formulas: Formula strings for node labels
+            formulas: Original formula strings
+            formula_indices: Indices of formulas in this class
             class_rep: Representative index for the class
+            graph_output_folder: Folder to save graph files
+            benchmark_name: Name of the benchmark
         """
-        if not self.enable_visualization:
+        if not self.save_graphs or not graph_output_folder:
             return
+        
+        os.makedirs(graph_output_folder, exist_ok=True)
         
         G = nx.DiGraph()
         n = len(edges)
         
-        # Add nodes and edges
-        for idx, formula in enumerate(formulas):
-            G.add_node(formula)
+        # Add nodes and edges with actual formula strings
+        formula_strings = [formulas[formula_indices[i]] for i in range(n)]
         
+        for idx, formula in enumerate(formula_strings):
+            G.add_node(f"F{idx}: {formula[:50]}{'...' if len(formula) > 50 else ''}")
+        
+        node_labels = list(G.nodes())
         for i in range(n):
             for j in edges[i]:
-                G.add_edge(formulas[i], formulas[j])
+                G.add_edge(node_labels[i], node_labels[j])
         
-        # Create visualization
-        plt.figure(figsize=(12, 8))
-        pos = nx.spring_layout(G, seed=42)
-        nx.draw(G, pos, with_labels=True, node_size=1500, font_size=8, arrows=True)
-        plt.title(f"Containment Graph for Class {class_rep}")
-        plt.show()
+        # Create and save visualization
+        plt.figure(figsize=(15, 10))
+        pos = nx.spring_layout(G, seed=42, k=3, iterations=50)
+        nx.draw(G, pos, with_labels=True, node_size=2000, font_size=6, 
+               arrows=True, node_color='lightblue', edge_color='gray')
+        plt.title(f"Containment Graph for {benchmark_name} - Class {class_rep}")
+        plt.tight_layout()
+        
+        # Save graph
+        graph_file = os.path.join(graph_output_folder, f"{benchmark_name}_class_{class_rep}_graph.png")
+        plt.savefig(graph_file, dpi=300, bbox_inches='tight')
+        
+        if self.enable_visualization:
+            plt.show()
+        else:
+            plt.close()
     
-    def optimize_formulas(self, formulas: List[str], benchmark_name: str = "unknown") -> OptimizationMetrics:
+    def optimize_formulas(self, formulas: List[str], benchmark_name: str = "unknown",
+                         ltl_output_folder: Optional[str] = None,
+                         graph_output_folder: Optional[str] = None,
+                         result_folder: Optional[str] = None) -> OptimizationMetrics:
         """
         Optimize a set of LTL formulas by finding minimal representatives.
         
         Args:
             formulas: List of LTL formula strings to optimize
             benchmark_name: Name identifier for this benchmark
+            ltl_output_folder: Optional folder to save minimal LTL formulas
+            graph_output_folder: Optional folder to save containment graphs
+            result_folder: Optional folder to save CSV results
             
         Returns:
             OptimizationMetrics object containing performance and result data
@@ -271,29 +353,40 @@ class LTLOptimizer:
         
         # Phase 1: Construct equivalence classes
         equiv_start = time.time()
-        equivalence_classes = self._construct_equivalence_classes(formulas)
+        equivalence_classes, automata = self._construct_equivalence_classes(formulas)
         equiv_time = time.time() - equiv_start
         
         # Phase 2: Analyze containment within each class
-        containment_start = time.time()
+        
         
         single_formula_classes = 0
         class_reductions = []
         total_minimal_count = 0
+        all_minimal_indices = []  # Track all minimal formula indices
+        cached_graphs = {}  # Cache containment graphs for visualization
         
         iterator = tqdm(equivalence_classes.items(), desc="Processing classes", disable=not self.verbose)
-        
+        containment_start = time.time()
         for rep, automata_list in iterator:
             if len(automata_list) == 1:
                 single_formula_classes += 1
                 total_minimal_count += 1
+                all_minimal_indices.extend(automata_list)  # Single formula is minimal
                 continue
             
             # Build containment graph
-            edges, reverse_edges = self._build_containment_graph(automata_list)
+            edges, reverse_edges = self._build_containment_graph(automata_list, automata)
+            
+            # Cache the graph for later visualization if needed
+            if self.enable_visualization or self.save_graphs:
+                cached_graphs[rep] = (edges, automata_list)
             
             # Find minimal candidates
             minimal_candidates = self._find_minimal_candidates(edges)
+            
+            # Convert local indices to global indices
+            global_minimal_indices = [automata_list[i] for i in minimal_candidates]
+            all_minimal_indices.extend(global_minimal_indices)
             
             # Record class reduction metrics
             class_reduction = {
@@ -304,16 +397,20 @@ class LTLOptimizer:
             }
             class_reductions.append(class_reduction)
             total_minimal_count += len(minimal_candidates)
-            
-            # Visualize if enabled
-            if self.enable_visualization and len(automata_list) > 1:
-                # Note: This requires mapping automata back to formula strings
-                # For now, using placeholder strings
-                formula_strings = [f"Formula_{i}" for i in range(len(automata_list))]
-                self._visualize_containment_graph(edges, formula_strings, rep)
         
+        # Calculate timing metrics before any saving operations
         containment_time = time.time() - containment_start
         total_time = time.time() - start_time
+        
+        # Now handle saving/visualization using cached graphs (not included in timing)
+        for rep, (edges, automata_list) in cached_graphs.items():
+            self._save_containment_graph(edges, formulas, automata_list, rep, 
+                                       graph_output_folder, benchmark_name)
+        
+        # Save minimal formulas if output folder specified
+        if ltl_output_folder:
+            self._save_minimal_formulas(formulas, sorted(all_minimal_indices), 
+                                      benchmark_name, ltl_output_folder)
         
         # Calculate overall metrics
         original_count = len(formulas)
@@ -332,7 +429,10 @@ class LTLOptimizer:
             original_formula_count=original_count,
             optimized_formula_count=optimized_count,
             reduction_percentage=reduction_percentage,
-            class_reductions=class_reductions
+            class_reductions=class_reductions,
+            ltl_output_folder=ltl_output_folder,
+            graph_output_folder=graph_output_folder,
+            result_folder=result_folder
         )
         
         if self.verbose:
@@ -364,12 +464,18 @@ class LTLOptimizer:
         print(f"  Reduction: {self.metrics.reduction_percentage:.1f}%")
         print("=" * 60)
     
-    def process_benchmark_folder(self, benchmark_path: str) -> OptimizationMetrics:
+    def process_benchmark_folder(self, benchmark_path: str, 
+                                ltl_output_folder: Optional[str] = None,
+                                graph_output_folder: Optional[str] = None,
+                                result_folder: Optional[str] = None) -> OptimizationMetrics:
         """
         Process a single benchmark folder containing properties.ltl file.
         
         Args:
             benchmark_path: Path to benchmark folder
+            ltl_output_folder: Optional folder to save minimal LTL formulas
+            graph_output_folder: Optional folder to save containment graphs
+            result_folder: Optional folder to save CSV results
             
         Returns:
             OptimizationMetrics for this benchmark
@@ -384,23 +490,31 @@ class LTLOptimizer:
             formulas = [line.strip() for line in lines if line.strip()]
         
         benchmark_name = os.path.basename(benchmark_path)
-        return self.optimize_formulas(formulas, benchmark_name)
+        return self.optimize_formulas(formulas, benchmark_name, 
+                                    ltl_output_folder, graph_output_folder, result_folder)
     
-    def process_multiple_benchmarks(self, benchmark_folder: str, output_dir: Optional[str] = None) -> Dict[str, OptimizationMetrics]:
+    def process_multiple_benchmarks(self, benchmark_folder: str, 
+                                   ltl_output_folder: Optional[str] = None,
+                                   graph_output_folder: Optional[str] = None,
+                                   result_folder: Optional[str] = None) -> Dict[str, OptimizationMetrics]:
         """
         Process multiple benchmark folders and optionally save results.
         
         Args:
             benchmark_folder: Root folder containing multiple benchmark subfolders
-            output_dir: Optional directory to save individual results
+            ltl_output_folder: Optional folder to save minimal LTL formulas
+            graph_output_folder: Optional folder to save containment graphs
+            result_folder: Optional folder to save CSV results
             
         Returns:
             Dictionary mapping benchmark name to OptimizationMetrics
         """
         results = {}
         
-        if output_dir and not os.path.exists(output_dir):
-            os.makedirs(output_dir)
+        # Create output directories if specified
+        for folder in [ltl_output_folder, graph_output_folder, result_folder]:
+            if folder and not os.path.exists(folder):
+                os.makedirs(folder, exist_ok=True)
         
         benchmark_folders = sorted(os.listdir(benchmark_folder))
         
@@ -411,13 +525,14 @@ class LTLOptimizer:
                 continue
             
             try:
-                metrics = self.process_benchmark_folder(folder_path)
+                metrics = self.process_benchmark_folder(folder_path, ltl_output_folder, 
+                                                      graph_output_folder, result_folder)
                 results[folder_name] = metrics
                 
-                # Save individual results if output directory specified
-                if output_dir:
-                    output_file = os.path.join(output_dir, f"{folder_name}_metrics.json")
-                    metrics.save_to_json(output_file)
+                # Save individual results if result folder specified
+                if result_folder:
+                    output_file = os.path.join(result_folder, f"{folder_name}_metrics.csv")
+                    metrics.save_to_csv(output_file)
                     
             except Exception as e:
                 if self.verbose:

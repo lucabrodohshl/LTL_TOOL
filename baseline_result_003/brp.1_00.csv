@@ -1,0 +1,5 @@
+,formula,time,result
+0,"!(![]((""Producer==wait_result"") -> <>(""Producer==ready"")))",0.04551165294833481,False
+1,"!([]((""Producer==wait_result"") -> <>(""Producer==check"")))",0.025254967040382326,False
+2,"!(![]((""Producer==wait_result"") -> <>(""Producer==check"")))",0.04506829392630607,False
+3,"!([]((""Producer==wait_result"") -> <>(""Producer==ready"")))",0.026055226917378604,False
