@@ -1,0 +1,99 @@
+================================================================================
+LTL REDUCTION ANALYSIS REPORT
+================================================================================
+Generated: 2025-08-08 15:30:27
+Total Benchmarks Analyzed: 91
+
+OVERALL STATISTICS
+----------------------------------------
+Total formulas processed: 2,682
+Total original formula count: 2,682
+Total optimized formula count: 1,723
+Overall reduction achieved: 35.76%
+Total processing time: 20182.17 seconds
+Average time per formula: 7.525044 seconds
+
+ZERO REDUCTION ANALYSIS
+----------------------------------------
+Benchmarks with 0% reduction: 20
+Percentage of total benchmarks: 22.0%
+Zero reduction formulas: 79
+Percentage of total formulas: 2.9%
+Average formula count in zero reduction: 4.0
+Average time per formula: 0.000807s
+
+Zero reduction benchmarks:
+  bopdp.1_000: 8 formulas, 0.0053s total
+  bopdp.2_000: 8 formulas, 0.0053s total
+  bopdp.3_000: 8 formulas, 0.0053s total
+  brp.1_000: 4 formulas, 0.0036s total
+  brp.2_000: 4 formulas, 0.0036s total
+  brp.3_000: 4 formulas, 0.0035s total
+  brp.4_001: 4 formulas, 0.0035s total
+  brp.5_000: 4 formulas, 0.0035s total
+  brp.6_000: 4 formulas, 0.0034s total
+  driving_phils.3_000: 2 formulas, 0.0018s total
+  driving_phils.5_000: 2 formulas, 0.0018s total
+  elevator.1_000: 4 formulas, 0.0036s total
+  elevator.2_000: 4 formulas, 0.0036s total
+  elevator.3_000: 4 formulas, 0.0035s total
+  elevator.4_001: 4 formulas, 0.0038s total
+  elevator.5_000: 4 formulas, 0.0036s total
+  extinction.1_000: 1 formulas, 0.0007s total
+  extinction.2_000: 2 formulas, 0.0010s total
+  extinction.3_000: 2 formulas, 0.0012s total
+  extinction.4_000: 2 formulas, 0.0012s total
+
+SIZE CATEGORY ANALYSIS
+----------------------------------------
+Large (51-100):
+  Benchmarks: 2
+  Total formulas: 131
+  Average reduction: 19.8%
+  Average time per formula: 0.187949s
+  Zero reduction cases: 0
+
+Medium (11-50):
+  Benchmarks: 5
+  Total formulas: 72
+  Average reduction: 50.7%
+  Average time per formula: 0.164828s
+  Zero reduction cases: 0
+
+Small (5-10):
+  Benchmarks: 51
+  Total formulas: 355
+  Average reduction: 50.1%
+  Average time per formula: 0.001012s
+  Zero reduction cases: 3
+
+Tiny (≤4):
+  Benchmarks: 28
+  Total formulas: 99
+  Average reduction: 18.8%
+  Average time per formula: 0.000854s
+  Zero reduction cases: 17
+
+Very Large (100+):
+  Benchmarks: 5
+  Total formulas: 2025
+  Average reduction: 32.9%
+  Average time per formula: 8.937059s
+  Zero reduction cases: 0
+
+PERFORMANCE INSIGHTS
+----------------------------------------
+Best reduction: at.5_000 (91.7%)
+Slowest per formula: elevator.4_000 (22.307792s)
+
+Correlations:
+Reduction % vs Time per formula: -0.063
+Formula count vs Reduction %: -0.041
+
+RECOMMENDATIONS
+----------------------------------------
+• Zero reduction cases are primarily small benchmarks (≤10 formulas)
+• Consider focusing optimization efforts on larger benchmark sets
+• Good overall reduction rate of 35.8%
+
+================================================================================

@@ -1,0 +1,2 @@
+total_formulas,total_classes,single_formula_classes,multi_formula_classes,equivalence_class_time,containment_analysis_time,total_time,original_formula_count,optimized_formula_count,reduction_percentage
+429,1,0,1,3.7941267490386963,3404.9321599006653,3408.7266290187836,429,345,19.58041958041958

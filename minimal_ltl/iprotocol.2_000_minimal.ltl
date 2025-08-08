@@ -1,0 +1,3 @@
+!(<>("Consumer==consume"))
+!(([]<>("Medium==dataOk") && []<>("Medium==nakOk")) -> []<>("Consumer==consume"))
+!(![]<>("Consumer==consume"))

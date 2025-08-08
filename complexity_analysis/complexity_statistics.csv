@@ -1,0 +1,14 @@
+Metric,Value
+total_benchmarks,142
+total_formulas,4071
+avg_complexity_per_benchmark,12.943079771694771
+max_complexity,47.144044233807264
+min_complexity,3.72
+complexity_std,8.9926455964904
+avg_formula_length,73.10057331395531
+avg_operator_count,5.967975141202874
+avg_nesting_depth,3.319109088555332
+avg_temporal_operators,0.4512360413884455
+avg_automaton_states,2.538152244908778
+most_complex_benchmark,leader-election.3_000
+simplest_benchmark,extinction.1_000
