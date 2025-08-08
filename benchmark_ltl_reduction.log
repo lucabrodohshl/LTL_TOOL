@@ -17803,3 +17803,43 @@ Optimizing 633 LTL formulas for benchmark: leader-election.3_000
 Building containment graph:   7%|▋         | 42/633 [48:27<9:46:47, 59.57s/it] [A[A
 
 Building containment graph:   7%|▋         | 43/633 [49:21<9:29:20, 57.90s/it][A[A
+
+Building containment graph:   7%|▋         | 44/633 [50:06<8:50:56, 54.09s/it][A[A
+
+Building containment graph:   7%|▋         | 45/633 [51:09<9:13:50, 56.52s/it][A[A
+
+Building containment graph:   7%|▋         | 46/633 [52:08<9:22:41, 57.52s/it][A[A
+
+Building containment graph:   7%|▋         | 47/633 [54:59<14:51:42, 91.30s/it][A[A
+
+Building containment graph:   8%|▊         | 48/633 [55:45<12:38:57, 77.84s/it][A[A
+
+Building containment graph:   8%|▊         | 49/633 [57:11<13:00:39, 80.20s/it][A[A
+
+Building containment graph:   8%|▊         | 50/633 [58:05<11:43:25, 72.39s/it][A[A
+
+Building containment graph:   8%|▊         | 51/633 [58:44<10:06:12, 62.50s/it][A[A
+
+Building containment graph:   8%|▊         | 52/633 [59:57<10:35:38, 65.64s/it][A[A
+
+Building containment graph:   8%|▊         | 53/633 [1:01:02<10:32:11, 65.40s/it][A[A
+
+Building containment graph:   9%|▊         | 54/633 [1:02:43<12:14:47, 76.14s/it][A[A
+
+Building containment graph:   9%|▊         | 55/633 [1:04:14<12:55:32, 80.51s/it][A[A
+
+Building containment graph:   9%|▉         | 56/633 [1:05:08<11:38:26, 72.63s/it][A[A
+
+Building containment graph:   9%|▉         | 57/633 [1:05:48<10:01:38, 62.67s/it][A[A
+
+Building containment graph:   9%|▉         | 58/633 [1:07:28<11:48:43, 73.95s/it][A[A
+
+Building containment graph:   9%|▉         | 59/633 [1:08:22<10:49:05, 67.85s/it][A[A
+
+Building containment graph:   9%|▉         | 60/633 [1:09:35<11:03:15, 69.45s/it][A[A
+
+Building containment graph:  10%|▉         | 61/633 [1:10:49<11:17:17, 71.04s/it][A[A
+
+Building containment graph:  10%|▉         | 62/633 [1:11:42<10:22:55, 65.46s/it][A[A
+
+Building containment graph:  10%|▉         | 63/633 [1:13:01<11:01:22, 69.62s/it][A[A
