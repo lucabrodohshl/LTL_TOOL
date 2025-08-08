@@ -9,9 +9,9 @@ import pandas as pd
 from tqdm import tqdm
 import concurrent.futures
 import multiprocessing
-SRC_FOLDER = "./benchmark_000"
-CSV_OUTPUT = "baseline_timing_summary.csv"
-RES_FOLDER = "./baseline_result"
+SRC_FOLDER = "./minimal_benchmarks"
+CSV_OUTPUT = "ltlreduction_timing_summary.csv"
+RES_FOLDER = "./ltlreduction_result"
 model_temp_dir = "models_dir"
 TIMEOUTS = 1000
 

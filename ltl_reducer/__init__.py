@@ -16,11 +16,11 @@ Usage:
     # Or use programmatically
     from ltl_reducer import LTLAnalysisOrchestrator
     orchestrator = LTLAnalysisOrchestrator()
-    results = orchestrator.run_complete_analysis()
+    results = orchestrator.run_complete_ltl_reduction_analysis()
 """
 
 from .analyzer import LTLAnalysisOrchestrator
-
+from .util import create_new_minimal_folder
 __version__ = "1.0.0"
 __author__ = "LTL Analysis Suite"
-__all__ = ["LTLAnalysisOrchestrator"]
+__all__ = ["LTLAnalysisOrchestrator", "create_new_minimal_folder"]

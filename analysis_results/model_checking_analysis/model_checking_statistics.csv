@@ -1,0 +1,14 @@
+Metric,Value
+Total Benchmarks,2
+Total Properties,6
+Total Runtime,1.723892662092112
+Average Runtime per Benchmark,0.861946331046056
+Median Runtime per Benchmark,0.861946331046056
+Average Properties per Benchmark,3.0
+Total Timeouts,0
+Benchmarks with Timeouts,0
+Overall Timeout Rate,0.0
+Fastest Benchmark,anderson.2_000
+Slowest Benchmark,anderson.1_000
+Most Properties,anderson.1_000
+Fewest Properties,anderson.1_000

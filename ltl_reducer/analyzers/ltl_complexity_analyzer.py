@@ -361,7 +361,12 @@ class LTLComplexityAnalyzer:
             output_file = os.path.join(self.output_folder, 'complexity_analysis.csv')
             df.to_csv(output_file, index=False)
             print(f"Complexity analysis saved to: {output_file}")
-        
+
+            f, s = df["benchmark"], df["formula_count"]
+            with open(os.path.join(self.output_folder, 'formula_count.txt'), 'w') as f_out:
+                for f, s in zip(f, s):
+                    f_out.write(f"{f}: {s}\n")
+                    
         return df
     
     def _load_timing_data(self, timing_results_folder: str) -> Dict[str, Dict]:

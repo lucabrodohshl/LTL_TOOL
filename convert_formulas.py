@@ -52,51 +52,55 @@ def model_check(f, m):
     nf = spot.formula.Not(f)
     ss = m.kripke(spot.atomic_prop_collect(nf))
     return spot.otf_product(ss, nf.translate()).is_empty() 
+if __name__ == "__main__":
+    """
+    Main script to process LTL formulas from benchmarks.
+    It reads LTL formulas, preprocesses them, and saves them in a unique folder structure.
+    """
+    not_done = []
+    done = 0
+    for benchmark in BENCHMARKS:
+        current_benc =  os.path.join(SRC_FOLDER, benchmark)
+        for folder in os.listdir(current_benc):
+            current_src_folder = os.path.join(current_benc, folder)
+            current_dst_folder = os.path.join(unique_dst, folder)
+            print(f"Processing: {current_src_folder} -> {current_dst_folder}")
+            current_dst_folder, folder = make_unique_folder(current_dst_folder, folder)
+            formulas = []
+            for filename in os.listdir(current_src_folder):
+                if filename.endswith(".dve"):
+                    shutil.copy(os.path.join(current_src_folder, filename),
+                                os.path.join(current_dst_folder, f"{folder}_model.dve"))
+                    continue  # Skip .dve files
+                if not filename.endswith(".ltl"):
+                    continue  # Skip non-.ltl files
 
-not_done = []
-done = 0
-for benchmark in BENCHMARKS:
-    current_benc =  os.path.join(SRC_FOLDER, benchmark)
-    for folder in os.listdir(current_benc):
-        current_src_folder = os.path.join(current_benc, folder)
-        current_dst_folder = os.path.join(unique_dst, folder)
-        print(f"Processing: {current_src_folder} -> {current_dst_folder}")
-        current_dst_folder, folder = make_unique_folder(current_dst_folder, folder)
-        formulas = []
-        for filename in os.listdir(current_src_folder):
-            if filename.endswith(".dve"):
-                shutil.copy(os.path.join(current_src_folder, filename),
-                             os.path.join(current_dst_folder, f"{folder}_model.dve"))
-                continue  # Skip .dve files
-            if not filename.endswith(".ltl"):
-                continue  # Skip non-.ltl files
+                filepath = os.path.join(current_src_folder, filename)
+                with open(filepath, 'r') as f:
+                    lines = f.readlines()
+                    ltl_formulas = [line.strip() for line in lines if line.strip()]
 
-            filepath = os.path.join(current_src_folder, filename)
-            with open(filepath, 'r') as f:
-                lines = f.readlines()
-                ltl_formulas = [line.strip() for line in lines if line.strip()]
+                for ltl_formula_str in ltl_formulas:
+                    clean_formula_str = preprocess_ltl(ltl_formula_str, current_benc)
+                    try:
+                        formula = spot.formula(clean_formula_str)  # Syntax check
+                        formulas.append(clean_formula_str)
+                    except Exception as e:
+                        not_done.append((filepath, ltl_formula_str))
+                        #print(f"[!] Error parsing formula in {filepath}:\n{ltl_formula_str}\n{e}")
 
-            for ltl_formula_str in ltl_formulas:
-                clean_formula_str = preprocess_ltl(ltl_formula_str, current_benc)
-                try:
-                    formula = spot.formula(clean_formula_str)  # Syntax check
-                    formulas.append(clean_formula_str)
-                except Exception as e:
-                    not_done.append((filepath, ltl_formula_str))
-                    #print(f"[!] Error parsing formula in {filepath}:\n{ltl_formula_str}\n{e}")
+            done += len(formulas)
+            print(f"{current_dst_folder}, {len(formulas)}")
 
-        done += len(formulas)
-        print(f"{current_dst_folder}, {len(formulas)}")
+            # Save all cleaned formulas
+            with open(os.path.join(current_dst_folder, "properties.ltl"), 'w') as f:
+                for item in formulas:
+                    f.write(f"{item}\n")
+        
 
-        # Save all cleaned formulas
-        with open(os.path.join(current_dst_folder, "properties.ltl"), 'w') as f:
-            for item in formulas:
-                f.write(f"{item}\n")
-    
+    print(f"Not done {len(not_done)}")
+    print(f"Done {done}")
 
-print(f"Not done {len(not_done)}")
-print(f"Done {done}")
-
-with open("notdone.ltl", 'w') as f:
-        for item in not_done:
-            f.write(f"{item[1]}\n")
+    with open("notdone.ltl", 'w') as f:
+            for item in not_done:
+                f.write(f"{item[1]}\n")

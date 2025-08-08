@@ -19,7 +19,7 @@ sys.path.append(os.path.join(os.path.dirname(__file__), 'analyzers'))
 from ltl_reduction_analyzer import LTLReductionAnalyzer
 from ltl_complexity_analyzer import LTLComplexityAnalyzer
 from complexity_impact_summary import create_professional_complexity_summary
-
+from mc_analyzer import ModelCheckingAnalyzer
 
 class LTLAnalysisOrchestrator:
     """
@@ -75,7 +75,8 @@ class LTLAnalysisOrchestrator:
             'reduction_analysis': os.path.join(self.base_results_folder, 'reduction_analysis'),
             'complexity_analysis': os.path.join(self.base_results_folder, 'complexity_analysis'),
             'complexity_impact': os.path.join(self.base_results_folder, 'complexity_impact'),
-            'summary_reports': os.path.join(self.base_results_folder, 'summary_reports')
+            'summary_reports': os.path.join(self.base_results_folder, 'summary_reports'),
+            'model_checking_analysis': os.path.join(self.base_results_folder, 'model_checking_analysis')
         }
         
         # Create all subfolders
@@ -252,7 +253,7 @@ class LTLAnalysisOrchestrator:
         except Exception as e:
             print(f"  Warning: Could not generate master summary: {str(e)}")
     
-    def run_complete_analysis(self, 
+    def run_complete_ltl_reduction_analysis(self, 
                             reduction_type: str = "both",
                             benchmark_folder: str = "benchmark_000",
                             complexity_timing_path = "complexity_timing_analysis/complexity_timing_analysis.csv") -> Dict[str, Tuple[bool, str]]:
@@ -326,3 +327,28 @@ class LTLAnalysisOrchestrator:
                     print("   (No files generated)")
         
         print(f"\n Total files generated: {total_files}")
+
+    def run_model_checking_analysis(self, 
+        model_checking_path: str = "model_checking_analysis.csv"
+        ) -> None:
+
+        analyzer = ModelCheckingAnalyzer(
+            save_plots=True,
+            show_plots=self.show_plots,
+            output_folder=self.folders['model_checking_analysis']
+        )
+        # Run analysis
+        if os.path.exists(model_checking_path):
+            df = analyzer.analyze_model_checking(model_checking_path)
+            
+            # Print key findings
+            avg_total_time = df['Total Elapsed Time (seconds)'].mean()
+            print(f"\nKey Finding: Average total elapsed time across all benchmarks: {avg_total_time:.2f} seconds")
+
+            print("✅ Model Checking Analysis completed successfully!")
+            return True, "Model checking analysis completed successfully"
+        else:
+            print(f"Error: CSV file '{model_checking_path}' not found.")
+            print("Please ensure the model checking timing summary file exists in the current directory.")
+            return False, f"Model checking analysis failed - file '{model_checking_path}' not found."
+            

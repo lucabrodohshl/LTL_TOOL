@@ -10,9 +10,10 @@ This module contains individual analysis tools for LTL formula optimization:
 from .ltl_reduction_analyzer import LTLReductionAnalyzer
 from .ltl_complexity_analyzer import LTLComplexityAnalyzer
 from .complexity_impact_summary import create_professional_complexity_summary
-
+from .mc_analyzer import ModelCheckingAnalyzer
 __all__ = [
     "LTLReductionAnalyzer",
     "LTLComplexityAnalyzer", 
-    "create_professional_complexity_summary"
+    "create_professional_complexity_summary",
+    "ModelCheckingAnalyzer"
 ]

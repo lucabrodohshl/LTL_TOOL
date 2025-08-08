@@ -1,7 +1,7 @@
 """
-Baseline Timing Analysis and Visualization Tool
+Model Checking Timing Analysis and Visualization Tool
 
-This script analyzes baseline timing results from CSV files and generates
+This script analyzes model checking timing results from CSV files and generates
 comprehensive visualizations and statistical summaries.
 """
 
@@ -19,14 +19,14 @@ except ImportError:
     HAS_SEABORN = False
 
 
-class BaselineAnalyzer:
+class ModelCheckingAnalyzer:
     """
-    Analyzer for baseline timing results with customizable visualization options.
+    Analyzer for model checking timing results with customizable visualization options.
     """
     
-    def __init__(self, save_plots: bool = True, show_plots: bool = False, output_folder: str = "baseline_analysis"):
+    def __init__(self, save_plots: bool = True, show_plots: bool = False, output_folder: str = "model_checking_analysis"):
         """
-        Initialize the baseline analyzer.
+        Initialize the model checking analyzer.
         
         Args:
             save_plots: Whether to save plots to files
@@ -45,12 +45,12 @@ class BaselineAnalyzer:
         if HAS_SEABORN:
             sns.set_palette("husl")
     
-    def load_baseline_data(self, csv_file: str) -> pd.DataFrame:
+    def load_model_checking_data(self, csv_file: str) -> pd.DataFrame:
         """
-        Load baseline timing data from CSV file.
+        Load model checking timing data from CSV file.
         
         Args:
-            csv_file: Path to baseline timing CSV file
+            csv_file: Path to model checking timing CSV file
             
         Returns:
             Loaded pandas DataFrame
@@ -71,10 +71,10 @@ class BaselineAnalyzer:
         Create comprehensive timing overview visualization.
         
         Args:
-            df: DataFrame with baseline timing data
+            df: DataFrame with model checking timing data
         """
         fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(16, 12))
-        fig.suptitle('Baseline Timing Analysis Overview', fontsize=16, fontweight='bold')
+        fig.suptitle('Model Checking Timing Analysis Overview', fontsize=16, fontweight='bold')
         
         # 1. Total Elapsed Time by Benchmark
         benchmarks = df['Benchmark']
@@ -143,7 +143,7 @@ class BaselineAnalyzer:
         Create detailed benchmark timing chart with benchmark names on x-axis.
         
         Args:
-            df: DataFrame with baseline timing data
+            df: DataFrame with model checking timing data
         """
         plt.figure(figsize=(20, 8))
         
@@ -189,7 +189,7 @@ class BaselineAnalyzer:
         Create performance heatmap showing multiple metrics.
         
         Args:
-            df: DataFrame with baseline timing data
+            df: DataFrame with model checking timing data
         """
         # Prepare data for heatmap
         metrics_data = df[['Benchmark', 'Total Elapsed Time (seconds)', 
@@ -255,7 +255,7 @@ class BaselineAnalyzer:
         Generate comprehensive statistics report.
         
         Args:
-            df: DataFrame with baseline timing data
+            df: DataFrame with model checking timing data
         """
         stats = {
             'Total Benchmarks': len(df),
@@ -274,7 +274,7 @@ class BaselineAnalyzer:
         }
         
         print("\n" + "=" * 60)
-        print("BASELINE TIMING ANALYSIS REPORT")
+        print("MODEL CHECKING TIMING ANALYSIS REPORT")
         print("=" * 60)
         
         for key, value in stats.items():
@@ -293,22 +293,22 @@ class BaselineAnalyzer:
         # Save statistics to CSV
         if self.save_plots:
             stats_df = pd.DataFrame(list(stats.items()), columns=['Metric', 'Value'])
-            stats_path = os.path.join(self.output_folder, 'baseline_statistics.csv')
+            stats_path = os.path.join(self.output_folder, 'model_checking_statistics.csv')
             stats_df.to_csv(stats_path, index=False)
             print(f"Statistics saved to: {stats_path}")
     
-    def analyze_baseline(self, csv_file: str) -> pd.DataFrame:
+    def analyze_model_checking(self, csv_file: str) -> pd.DataFrame:
         """
-        Complete baseline analysis with all visualizations and statistics.
+        Complete model checking analysis with all visualizations and statistics.
         
         Args:
-            csv_file: Path to baseline timing CSV file
+            csv_file: Path to model checking timing CSV file
             
         Returns:
             Loaded and processed DataFrame
         """
-        print(f"Loading baseline data from: {csv_file}")
-        df = self.load_baseline_data(csv_file)
+        print(f"Loading model checking data from: {csv_file}")
+        df = self.load_model_checking_data(csv_file)
         
         print(f"Analyzing {len(df)} benchmarks...")
         
@@ -328,13 +328,13 @@ def main():
     """Main execution function."""
     
     # Configuration
-    CSV_FILE = "baseline_timing_summary.csv"
+    CSV_FILE = "ltlreduction_timing_summary.csv"
     SAVE_PLOTS = True
     SHOW_PLOTS = False  # Set to True to display plots interactively
-    OUTPUT_FOLDER = "baseline_analysis"
+    OUTPUT_FOLDER = "ltlreduction_analysis"
     
     # Initialize analyzer
-    analyzer = BaselineAnalyzer(
+    analyzer = ModelCheckingAnalyzer(
         save_plots=SAVE_PLOTS,
         show_plots=SHOW_PLOTS,
         output_folder=OUTPUT_FOLDER
@@ -342,7 +342,7 @@ def main():
     
     # Run analysis
     if os.path.exists(CSV_FILE):
-        df = analyzer.analyze_baseline(CSV_FILE)
+        df = analyzer.analyze_model_checking(CSV_FILE)
         
         # Print key findings
         avg_total_time = df['Total Elapsed Time (seconds)'].mean()
@@ -350,7 +350,7 @@ def main():
         
     else:
         print(f"Error: CSV file '{CSV_FILE}' not found.")
-        print("Please ensure the baseline timing summary file exists in the current directory.")
+        print("Please ensure the model checking timing summary file exists in the current directory.")
 
 
 if __name__ == "__main__":

@@ -93,6 +93,17 @@ Examples:
         action='store_true',
         help='List all generated files after analysis'
     )
+
+    parser.add_argument(
+        '--skip-mc_analysis',
+        action='store_true',
+        help='Skip model checking analysis'
+    )
+    parser.add_argument(
+        '--mc_analysis_path',
+        default='ltlreduction_timing_summary.csv',
+        help='Path to the model checking timing summary CSV file (default: ltlreduction_timing_summary.csv)'
+    )
     
     return parser.parse_args()
 
@@ -177,6 +188,12 @@ def main():
         print(" Warning: Complexity impact is a to-do.")
 
         #results['Complexity Impact'] = orchestrator.run_complexity_impact_summary()
+    
+    if not args.skip_mc_analysis:
+
+        results['Model Checking Analysis'] = orchestrator.run_model_checking_analysis(
+            model_checking_path=args.mc_analysis_path
+            )
     
     # Generate master summary if we ran any analyses
     if results:
