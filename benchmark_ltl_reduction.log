@@ -1122,3 +1122,1037 @@ Optimizing 429 LTL formulas for benchmark: bridge.3_000
 Building containment graph:   1%|▏         | 6/429 [00:43<53:20,  7.57s/it][A[A
 
 Building containment graph:   2%|▏         | 7/429 [00:51<52:31,  7.47s/it][A[A
+
+Building containment graph:   2%|▏         | 8/429 [00:59<53:56,  7.69s/it][A[A
+
+Building containment graph:   2%|▏         | 9/429 [01:05<50:25,  7.20s/it][A[A
+
+Building containment graph:   2%|▏         | 10/429 [01:13<53:02,  7.60s/it][A[A
+
+Building containment graph:   3%|▎         | 11/429 [01:20<50:28,  7.25s/it][A[A
+
+Building containment graph:   3%|▎         | 12/429 [01:26<48:22,  6.96s/it][A[A
+
+Building containment graph:   3%|▎         | 13/429 [01:32<46:41,  6.74s/it][A[A
+
+Building containment graph:   3%|▎         | 14/429 [01:42<52:19,  7.56s/it][A[A
+
+Building containment graph:   3%|▎         | 15/429 [01:49<51:23,  7.45s/it][A[A
+
+Building containment graph:   4%|▎         | 16/429 [01:57<52:00,  7.56s/it][A[A
+
+Building containment graph:   4%|▍         | 17/429 [02:04<51:37,  7.52s/it][A[A
+
+Building containment graph:   4%|▍         | 18/429 [02:11<49:30,  7.23s/it][A[A
+
+Building containment graph:   4%|▍         | 19/429 [02:19<51:56,  7.60s/it][A[A
+
+Building containment graph:   5%|▍         | 20/429 [02:26<50:49,  7.46s/it][A[A
+
+Building containment graph:   5%|▍         | 21/429 [02:33<49:44,  7.31s/it][A[A
+
+Building containment graph:   5%|▌         | 22/429 [02:42<52:45,  7.78s/it][A[AError checking containment between automata 0 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 1 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 2 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 3 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 4 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 5 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 6 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 7 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 8 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 9 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 10 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 11 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 12 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 13 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 14 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 15 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 16 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 17 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 18 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 19 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 20 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 21 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 22 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+
+Building containment graph:   5%|▌         | 23/429 [02:50<52:39,  7.78s/it][A[A
+
+Building containment graph:   6%|▌         | 24/429 [03:00<57:37,  8.54s/it][A[A
+
+Building containment graph:   6%|▌         | 25/429 [03:08<55:50,  8.29s/it][A[A
+
+Building containment graph:   6%|▌         | 26/429 [03:17<56:25,  8.40s/it][A[A
+
+Building containment graph:   6%|▋         | 27/429 [03:23<52:36,  7.85s/it][A[A
+
+Building containment graph:   7%|▋         | 28/429 [03:31<52:36,  7.87s/it][A[A
+
+Building containment graph:   7%|▋         | 29/429 [03:41<55:10,  8.28s/it][A[A
+
+Building containment graph:   7%|▋         | 30/429 [03:48<54:11,  8.15s/it][A[A
+
+Building containment graph:   7%|▋         | 31/429 [03:55<50:47,  7.66s/it][A[A
+
+Building containment graph:   7%|▋         | 32/429 [04:05<55:21,  8.37s/it][A[A
+
+Building containment graph:   8%|▊         | 33/429 [04:12<51:45,  7.84s/it][A[A
+
+Building containment graph:   8%|▊         | 34/429 [04:18<48:52,  7.43s/it][A[A
+
+Building containment graph:   8%|▊         | 35/429 [04:29<56:14,  8.56s/it][A[A
+
+Building containment graph:   8%|▊         | 36/429 [04:36<51:51,  7.92s/it][A[A
+
+Building containment graph:   9%|▊         | 37/429 [04:46<57:10,  8.75s/it][A[A
+
+Building containment graph:   9%|▉         | 38/429 [04:53<52:47,  8.10s/it][A[A
+
+Building containment graph:   9%|▉         | 39/429 [05:00<51:26,  7.91s/it][A[A
+
+Building containment graph:   9%|▉         | 40/429 [05:07<49:11,  7.59s/it][A[A
+
+Building containment graph:  10%|▉         | 41/429 [05:14<47:18,  7.32s/it][A[A
+
+Building containment graph:  10%|▉         | 42/429 [05:22<47:55,  7.43s/it][A[A
+
+Building containment graph:  10%|█         | 43/429 [05:31<50:46,  7.89s/it][A[A
+
+Building containment graph:  10%|█         | 44/429 [05:40<53:01,  8.26s/it][A[A
+
+Building containment graph:  10%|█         | 45/429 [05:47<50:27,  7.88s/it][A[A
+Error checking containment between automata 23 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 24 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 25 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 26 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 27 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 28 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 29 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 30 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 31 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 32 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 33 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 34 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 35 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 36 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 37 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 38 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 39 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 40 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 41 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 42 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 43 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 44 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 45 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+
+Building containment graph:  11%|█         | 46/429 [05:53<48:11,  7.55s/it][A[A
+
+Building containment graph:  11%|█         | 47/429 [06:06<58:10,  9.14s/it][A[A
+
+Building containment graph:  11%|█         | 48/429 [06:13<53:06,  8.36s/it][A[A
+
+Building containment graph:  11%|█▏        | 49/429 [06:20<51:08,  8.08s/it][A[A
+
+Building containment graph:  12%|█▏        | 50/429 [06:32<57:20,  9.08s/it][A[A
+
+Building containment graph:  12%|█▏        | 51/429 [06:38<51:56,  8.24s/it][A[A
+
+Building containment graph:  12%|█▏        | 52/429 [06:44<47:56,  7.63s/it][A[A
+
+Building containment graph:  12%|█▏        | 53/429 [06:52<47:28,  7.58s/it][A[A
+
+Building containment graph:  13%|█▎        | 54/429 [07:00<49:09,  7.86s/it][A[A
+
+Building containment graph:  13%|█▎        | 55/429 [07:06<45:54,  7.36s/it][A[A
+
+Building containment graph:  13%|█▎        | 56/429 [07:14<46:53,  7.54s/it][A[A
+
+Building containment graph:  13%|█▎        | 57/429 [07:23<48:40,  7.85s/it][A[A
+
+Building containment graph:  14%|█▎        | 58/429 [07:34<53:51,  8.71s/it][A[A
+
+Building containment graph:  14%|█▍        | 59/429 [07:41<50:36,  8.21s/it][A[A
+
+Building containment graph:  14%|█▍        | 60/429 [07:48<48:48,  7.94s/it][A[A
+
+Building containment graph:  14%|█▍        | 61/429 [07:55<46:34,  7.59s/it][A[A
+
+Building containment graph:  14%|█▍        | 62/429 [08:03<47:53,  7.83s/it][A[A
+
+Building containment graph:  15%|█▍        | 63/429 [08:11<48:01,  7.87s/it][A[A
+
+Building containment graph:  15%|█▍        | 64/429 [08:20<50:01,  8.22s/it][A[A
+
+Building containment graph:  15%|█▌        | 65/429 [08:31<55:13,  9.10s/it][A[A
+
+Building containment graph:  15%|█▌        | 66/429 [08:38<50:07,  8.29s/it][A[A
+
+Building containment graph:  16%|█▌        | 67/429 [08:46<50:40,  8.40s/it][A[A
+
+Building containment graph:  16%|█▌        | 68/429 [08:54<48:51,  8.12s/it][A[A
+Error checking containment between automata 46 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 47 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 48 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 49 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 50 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 51 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 52 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 53 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 54 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 55 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 56 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 57 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 58 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 59 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 60 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 61 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 62 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 63 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 64 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 65 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 66 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 67 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 68 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+
+Building containment graph:  16%|█▌        | 69/429 [09:00<45:56,  7.66s/it][A[A
+
+Building containment graph:  16%|█▋        | 70/429 [09:08<45:07,  7.54s/it][A[A
+
+Building containment graph:  17%|█▋        | 71/429 [09:14<43:08,  7.23s/it][A[A
+
+Building containment graph:  17%|█▋        | 72/429 [09:22<44:18,  7.45s/it][A[A
+
+Building containment graph:  17%|█▋        | 73/429 [09:34<52:16,  8.81s/it][A[A
+
+Building containment graph:  17%|█▋        | 74/429 [09:41<48:44,  8.24s/it][A[A
+
+Building containment graph:  17%|█▋        | 75/429 [09:49<49:03,  8.31s/it][A[A
+
+Building containment graph:  18%|█▊        | 76/429 [09:59<51:37,  8.77s/it][A[A
+
+Building containment graph:  18%|█▊        | 77/429 [10:06<48:41,  8.30s/it][A[A
+
+Building containment graph:  18%|█▊        | 78/429 [10:13<45:46,  7.83s/it][A[A
+
+Building containment graph:  18%|█▊        | 79/429 [10:25<51:42,  8.87s/it][A[A
+
+Building containment graph:  19%|█▊        | 80/429 [10:31<48:17,  8.30s/it][A[A
+
+Building containment graph:  19%|█▉        | 81/429 [10:39<47:06,  8.12s/it][A[A
+
+Building containment graph:  19%|█▉        | 82/429 [10:46<43:57,  7.60s/it][A[A
+
+Building containment graph:  19%|█▉        | 83/429 [10:52<41:44,  7.24s/it][A[A
+
+Building containment graph:  20%|█▉        | 84/429 [10:59<40:40,  7.07s/it][A[A
+
+Building containment graph:  20%|█▉        | 85/429 [11:05<40:04,  6.99s/it][A[A
+
+Building containment graph:  20%|██        | 86/429 [11:15<44:45,  7.83s/it][A[A
+
+Building containment graph:  20%|██        | 87/429 [11:22<41:56,  7.36s/it][A[A
+
+Building containment graph:  21%|██        | 88/429 [11:29<42:00,  7.39s/it][A[A
+
+Building containment graph:  21%|██        | 89/429 [11:37<42:52,  7.57s/it][A[A
+
+Building containment graph:  21%|██        | 90/429 [11:44<42:05,  7.45s/it][A[A
+
+Building containment graph:  21%|██        | 91/429 [11:52<42:31,  7.55s/it][A[A
+Error checking containment between automata 69 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 70 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 71 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 72 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 73 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 74 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 75 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 76 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 77 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 78 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 79 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 80 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 81 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 82 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 83 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 84 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 85 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 86 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 87 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 88 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 89 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 90 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 91 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+
+Building containment graph:  21%|██▏       | 92/429 [12:01<44:49,  7.98s/it][A[A
+
+Building containment graph:  22%|██▏       | 93/429 [12:11<48:41,  8.70s/it][A[A
+
+Building containment graph:  22%|██▏       | 94/429 [12:18<45:45,  8.20s/it][A[A
+
+Building containment graph:  22%|██▏       | 95/429 [12:26<44:38,  8.02s/it][A[A
+
+Building containment graph:  22%|██▏       | 96/429 [12:33<43:10,  7.78s/it][A[A
+
+Building containment graph:  23%|██▎       | 97/429 [12:40<41:40,  7.53s/it][A[A
+
+Building containment graph:  23%|██▎       | 98/429 [12:48<42:50,  7.77s/it][A[A
+
+Building containment graph:  23%|██▎       | 99/429 [12:55<41:19,  7.51s/it][A[A
+
+Building containment graph:  23%|██▎       | 100/429 [13:07<48:02,  8.76s/it][A[A
+
+Building containment graph:  24%|██▎       | 101/429 [13:16<48:49,  8.93s/it][A[A
+
+Building containment graph:  24%|██▍       | 102/429 [13:23<44:54,  8.24s/it][A[A
+
+Building containment graph:  24%|██▍       | 103/429 [13:31<43:51,  8.07s/it][A[A
+
+Building containment graph:  24%|██▍       | 104/429 [13:40<46:26,  8.57s/it][A[A
+
+Building containment graph:  24%|██▍       | 105/429 [13:47<42:59,  7.96s/it][A[A
+
+Building containment graph:  25%|██▍       | 106/429 [13:56<45:11,  8.39s/it][A[A
+
+Building containment graph:  25%|██▍       | 107/429 [14:03<42:38,  7.95s/it][A[A
+
+Building containment graph:  25%|██▌       | 108/429 [14:13<45:45,  8.55s/it][A[A
+
+Building containment graph:  25%|██▌       | 109/429 [14:20<42:58,  8.06s/it][A[A
+
+Building containment graph:  26%|██▌       | 110/429 [14:26<40:14,  7.57s/it][A[A
+
+Building containment graph:  26%|██▌       | 111/429 [14:32<37:36,  7.09s/it][A[A
+
+Building containment graph:  26%|██▌       | 112/429 [15:11<1:27:25, 16.55s/it][A[A
+
+Building containment graph:  26%|██▋       | 113/429 [15:19<1:14:00, 14.05s/it][A[A
+
+Building containment graph:  27%|██▋       | 114/429 [15:26<1:01:49, 11.78s/it][A[A
+Error checking containment between automata 92 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 93 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 94 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 95 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 96 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 97 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 98 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 99 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 100 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 101 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 102 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 103 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 104 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 105 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 106 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 107 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 108 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 109 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 110 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 111 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 112 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 113 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+Error checking containment between automata 114 and 159: Too many acceptance sets used.  The limit is 32.
+
+If you do not mind a slowdown, you could try recompiling Spot with a larger limit.
+See the --enable-max-accsets=N configure option.
+
+If you believe Spot could be improved to solve your problem
+using the current limit, please email <spot@lrde.epita.fr>.
+
+Building containment graph:  27%|██▋       | 115/429 [15:34<56:18, 10.76s/it]  [A[A
+
+Building containment graph:  27%|██▋       | 116/429 [15:43<52:53, 10.14s/it][A[A
+
+Building containment graph:  27%|██▋       | 117/429 [15:49<47:08,  9.07s/it][A[A
+
+Building containment graph:  28%|██▊       | 118/429 [15:57<44:16,  8.54s/it][A[A
+
+Building containment graph:  28%|██▊       | 119/429 [16:03<40:52,  7.91s/it][A[A
+
+Building containment graph:  28%|██▊       | 120/429 [16:11<39:59,  7.77s/it][A[A
+
+Building containment graph:  28%|██▊       | 121/429 [16:17<38:25,  7.49s/it][A[A
+
+Building containment graph:  28%|██▊       | 122/429 [16:26<40:03,  7.83s/it][A[A
