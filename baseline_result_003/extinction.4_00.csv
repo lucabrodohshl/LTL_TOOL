@@ -1,0 +1,3 @@
+,formula,time,result
+0,"!(<>(""leaders_num==1""))",5.408642067923211,False
+1,"!(!<>(""leaders_num==1""))",5.1758537190034986,False

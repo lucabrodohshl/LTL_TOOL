@@ -1,0 +1,7 @@
+,formula,time,result
+0,"!([]((""CC==doneCheckedOut"") -> <>((""CC==doneCheckIn"") || (""CC==doneUnCheckOut""))))",4.683771040989086,False
+1,"!(!(!(!((""User_0==doneGet"") || (""User_0==doneRegister"")) U (""UserAdmin_0==doneNotify"")) && []((""User_0==doneUnRegister"") -> !(!((""User_0==doneGet"") || (""User_0==doneRegister"")) U (""UserAdmin_0==doneNotify"")))))",1000.0,
+2,"!(![]((""CC==doneCheckedOut"") -> <>((""CC==doneCheckIn"") || (""CC==doneUnCheckOut""))))",6.609768569003791,False
+3,"!(![]((""CC==doneCheckOut"") -> <>((""CC==doneCheckedOut"") || (""CC==doneNotAvailable""))))",5.238490749965422,True
+4,"!([]((""CC==doneCheckOut"") -> <>((""CC==doneCheckedOut"") || (""CC==doneNotAvailable""))))",4.856514745973982,False
+5,"!(!(!((""User_0==doneGet"") || (""User_0==doneRegister"")) U (""UserAdmin_0==doneNotify"")) && []((""User_0==doneUnRegister"") -> !(!((""User_0==doneGet"") || (""User_0==doneRegister"")) U (""UserAdmin_0==doneNotify""))))",1000.0,

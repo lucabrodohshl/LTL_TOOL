@@ -1,0 +1,7 @@
+,formula,time,result
+0,"!(<>((""Consumer==consume0"") || (""Consumer==consume1"")))",0.01535784697625786,False
+1,"!(!<>((""Consumer==consume0"") || (""Consumer==consume1"")))",0.010073826997540891,True
+2,"!(![]<>((""Consumer==consume0"") || (""Consumer==consume1"")))",0.015060098026879132,True
+3,"!([]<>((""Consumer==consume0"") || (""Consumer==consume1"")))",0.011427632998675108,False
+4,"!(!(((""Producer==ready"") U (""Producer==produce0"")) -> ((""Consumer==consume0"") R ((""Consumer==consume0"") || (""Consumer==got_msg"") || (""Consumer==ready"")))))",0.01418642106000334,False
+5,"!(((""Producer==ready"") U (""Producer==produce0"")) -> ((""Consumer==consume0"") R ((""Consumer==consume0"") || (""Consumer==got_msg"") || (""Consumer==ready""))))",0.014320019981823862,False

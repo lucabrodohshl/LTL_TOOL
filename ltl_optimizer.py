@@ -125,35 +125,7 @@ class LTLOptimizer:
         self.verbose = verbose
         self.metrics: Optional[OptimizationMetrics] = None
         
-    def _extract_atomic_propositions(self, formulas: List[str]) -> Tuple[Set[str], List[Any]]:
-        """
-        Extract atomic propositions and build automata for each formula.
-        
-        Args:
-            formulas: List of LTL formula strings
-            
-        Returns:
-            Tuple of (all_atomic_props, automata_list)
-        """
-        all_props = set()
-        all_automata = []
-        
-        for formula_str in formulas:
-            try:
-                formula = spot.formula(formula_str)
-                props = spot.atomic_prop_collect(formula)
-                all_props.update(props)
-                
-                automaton = spot.translate(formula)
-                automaton.merge_edges()
-                automaton = automaton.postprocess()
-                all_automata.append(automaton)
-            except Exception as e:
-                if self.verbose:
-                    print(f"Error processing formula '{formula_str}': {e}")
-                all_automata.append(None)
-        
-        return all_props, all_automata
+
     
     def _construct_equivalence_classes(self, formulas: List[str]) -> Tuple[Dict[int, List[int]], List[Any]]:
         """
@@ -169,13 +141,14 @@ class LTLOptimizer:
         props_per_formula = []
         automata = []
         
-        # Extract propositions and build automata
+        # Extract propositions and build automata in single pass
         for formula_str in formulas:
             try:
                 formula = spot.formula(formula_str)
                 props = spot.atomic_prop_collect(formula)
                 props_per_formula.append(set(props))
                 
+                # Standardized automata construction using "BA"
                 aut = spot.translate(formula, "BA")
                 aut.merge_edges()
                 aut = aut.postprocess()
@@ -208,7 +181,7 @@ class LTLOptimizer:
     
     def _build_containment_graph(self, formula_indices: List[int], automata: List[Any]) -> Tuple[List[Set[int]], List[Set[int]]]:
         """
-        Build containment graph for a set of automata.
+        Build containment graph for a set of automata with optimizations.
         
         Args:
             formula_indices: List of formula indices in the same equivalence class
@@ -221,24 +194,52 @@ class LTLOptimizer:
         edges = [set() for _ in range(n)]
         reverse_edges = [set() for _ in range(n)]
         
-        iterator = tqdm(range(n), desc="Building containment graph", disable=not self.verbose)
+        # Skip containment analysis for trivial cases
+        if n <= 1:
+            return edges, reverse_edges
+        
+        # Pre-filter valid automata
+        valid_automata = []
+        index_mapping = {}
+        for i, idx in enumerate(formula_indices):
+            if automata[idx] is not None:
+                valid_automata.append((i, automata[idx]))
+                index_mapping[i] = len(valid_automata) - 1
+        
+        # Skip if insufficient valid automata
+        if len(valid_automata) <= 1:
+            return edges, reverse_edges
+        
+        iterator = tqdm(range(len(valid_automata)), desc="Building containment graph", disable=not self.verbose)
+        
         for i in iterator:
-            aut_i = automata[formula_indices[i]]
-            if aut_i is None:
-                continue
-            for j in range(n):
+            local_i, aut_i = valid_automata[i]
+            
+            for j in range(len(valid_automata)):
                 if i == j:
                     continue
-                aut_j = automata[formula_indices[j]]
-                if aut_j is None:
-                    continue
+                    
+                local_j, aut_j = valid_automata[j]
+                
                 try:
+                    # Optimization: Check if j is already known to contain i through transitivity
+                    if local_j in edges[local_i]:
+                        continue
+                        
+                    # Check containment: does aut_j contain aut_i?
                     if aut_j.contains(aut_i):
-                        edges[i].add(j)
-                        reverse_edges[j].add(i)
+                        edges[local_i].add(local_j)
+                        reverse_edges[local_j].add(local_i)
+                        
+                        # Early termination: if aut_i contains aut_j, they're equivalent
+                        # Only check if we haven't already established the reverse relationship
+                        if local_i not in edges[local_j] and aut_i.contains(aut_j):
+                            edges[local_j].add(local_i)
+                            reverse_edges[local_i].add(local_j)
+                            
                 except Exception as e:
                     if self.verbose:
-                        print(f"Error checking containment: {e}")
+                        print(f"Error checking containment between automata {local_i} and {local_j}: {e}")
         
         return edges, reverse_edges
     
@@ -377,8 +378,8 @@ class LTLOptimizer:
             # Build containment graph
             edges, reverse_edges = self._build_containment_graph(automata_list, automata)
             
-            # Cache the graph for later visualization if needed
-            if self.enable_visualization or self.save_graphs:
+            # Cache the graph ONLY if visualization or saving is needed
+            if (self.enable_visualization or self.save_graphs):
                 cached_graphs[rep] = (edges, automata_list)
             
             # Find minimal candidates

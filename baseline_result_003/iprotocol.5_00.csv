@@ -1,0 +1,7 @@
+,formula,time,result
+0,"!(!<>(""Consumer==consume""))",0.11983741202857345,False
+1,"!(![]<>(""Consumer==consume""))",122.96875332202762,False
+2,"!(!(([]<>(""Medium==dataOk"") && []<>(""Medium==nakOk"")) -> []<>(""Consumer==consume"")))",122.59542327292729,False
+3,"!([]<>(""Consumer==consume""))",81.2812795570353,False
+4,"!(<>(""Consumer==consume""))",80.53656980104279,False
+5,"!(([]<>(""Medium==dataOk"") && []<>(""Medium==nakOk"")) -> []<>(""Consumer==consume""))",378.1876447550021,False

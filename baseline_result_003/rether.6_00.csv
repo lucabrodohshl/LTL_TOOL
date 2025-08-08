@@ -1,0 +1,11 @@
+,formula,time,result
+0,"!(![]((""Node_0==reserved"") -> (!(""Token==cycle_end"") U ((""Token==cycle_end"") U (!(""Token==cycle_end"") && ((""Node_0==RT_action"") R !(""Token==cycle_end"")))))))",12.395830594934523,True
+1,"!(![]((""Node_0==reserved"") -> ((""Node_0==RT_action"") R !(""Token==cycle_end""))))",17.19745736999903,False
+2,"!(![]<>(""Node_0==RT_action""))",20.745349242002703,False
+3,"!([]((""Node_0==want_RT"") -> (!(""Token==cycle_end"") U ((""Token==cycle_end"") U (!(""Token==cycle_end"") && ((""Node_0==RT_action"") R !(""Token==cycle_end"")))))))",11.954424866009504,False
+4,"!(![]((""Node_0==want_RT"") -> (!(""Token==cycle_end"") U ((""Token==cycle_end"") U (!(""Token==cycle_end"") && ((""Node_0==RT_action"") R !(""Token==cycle_end"")))))))",23.832716517033987,False
+5,"!([]<>(""Node_0==RT_action""))",9.964608657057397,False
+6,"!([]<>(""Node_0==NRT_action""))",9.860522879986092,False
+7,"!([]((""Node_0==reserved"") -> ((""Node_0==RT_action"") R !(""Token==cycle_end""))))",6.4977514810161665,False
+8,"!(![]<>(""Node_0==NRT_action""))",20.67286801210139,False
+9,"!([]((""Node_0==reserved"") -> (!(""Token==cycle_end"") U ((""Token==cycle_end"") U (!(""Token==cycle_end"") && ((""Node_0==RT_action"") R !(""Token==cycle_end"")))))))",11.541504885070026,False

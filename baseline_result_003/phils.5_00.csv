@@ -1,0 +1,7 @@
+,formula,time,result
+0,"!(![]<>((""phil_0==one"") -> <>(""phil_0==eat"")))",2.386285685002804,False
+1,"!(![]<>((""phil_0==eat"") || (""phil_1==eat"") || (""phil_2==eat"") || (""phil_3==eat"") || (""phil_4==eat"") || (""phil_5==eat"") || (""phil_6==eat"") || (""phil_7==eat"") || (""phil_8==eat"") || (""phil_9==eat"") || (""phil_10==eat"") || (""phil_11==eat"")))",3.0726989270187914,False
+2,"!([]<>((""phil_0==one"") -> <>(""phil_0==eat"")))",1.737243959098123,False
+3,"!([]<>(""phil_0==eat""))",1.7137467219727114,False
+4,"!(![]<>(""phil_0==eat""))",4.088039453024976,False
+5,"!([]<>((""phil_0==eat"") || (""phil_1==eat"") || (""phil_2==eat"") || (""phil_3==eat"") || (""phil_4==eat"") || (""phil_5==eat"") || (""phil_6==eat"") || (""phil_7==eat"") || (""phil_8==eat"") || (""phil_9==eat"") || (""phil_10==eat"") || (""phil_11==eat"")))",1.8939993269741535,False

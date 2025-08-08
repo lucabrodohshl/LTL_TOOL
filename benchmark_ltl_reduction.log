@@ -1,0 +1,1124 @@
+nohup: ignoring input
+Starting benchmark analysis on folder: benchmark_000
+LTL outputs will be saved to: minimal_ltl
+Graphs will be saved to: minimal_graph
+Results will be saved to: optimized_results
+--------------------------------------------------------------------------------
+Processing benchmarks:   0%|          | 0/142 [00:00<?, ?it/s]Optimizing 413 LTL formulas for benchmark: adding.4_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/413 [00:00<?, ?it/s][A[A
+
+Building containment graph:   0%|          | 2/413 [00:00<00:31, 13.16it/s][A[A
+
+Building containment graph:   1%|          | 4/413 [00:00<00:32, 12.72it/s][A[A
+
+Building containment graph:   1%|▏         | 6/413 [00:00<00:33, 12.20it/s][A[A
+
+Building containment graph:   2%|▏         | 8/413 [00:00<00:33, 12.25it/s][A[A
+
+Building containment graph:   2%|▏         | 10/413 [00:00<00:32, 12.32it/s][A[A
+
+Building containment graph:   3%|▎         | 12/413 [00:00<00:33, 12.13it/s][A[A
+
+Building containment graph:   3%|▎         | 14/413 [00:01<00:32, 12.13it/s][A[A
+
+Building containment graph:   4%|▍         | 16/413 [00:01<00:33, 11.93it/s][A[A
+
+Building containment graph:   4%|▍         | 18/413 [00:01<00:31, 12.35it/s][A[A
+
+Building containment graph:   5%|▍         | 20/413 [00:01<00:31, 12.59it/s][A[A
+
+Building containment graph:   5%|▌         | 22/413 [00:01<00:32, 12.19it/s][A[A
+
+Building containment graph:   6%|▌         | 24/413 [00:01<00:31, 12.42it/s][A[A
+
+Building containment graph:   6%|▋         | 26/413 [00:02<00:30, 12.50it/s][A[A
+
+Building containment graph:   7%|▋         | 28/413 [00:02<00:30, 12.63it/s][A[A
+
+Building containment graph:   7%|▋         | 30/413 [00:02<00:30, 12.50it/s][A[A
+
+Building containment graph:   8%|▊         | 32/413 [00:02<00:30, 12.57it/s][A[A
+
+Building containment graph:   8%|▊         | 34/413 [00:02<00:30, 12.60it/s][A[A
+
+Building containment graph:   9%|▊         | 36/413 [00:02<00:29, 12.59it/s][A[A
+
+Building containment graph:   9%|▉         | 38/413 [00:03<00:30, 12.38it/s][A[A
+
+Building containment graph:  10%|▉         | 40/413 [00:03<00:29, 12.61it/s][A[A
+
+Building containment graph:  10%|█         | 42/413 [00:03<00:30, 12.35it/s][A[A
+
+Building containment graph:  11%|█         | 44/413 [00:03<00:29, 12.49it/s][A[A
+
+Building containment graph:  11%|█         | 46/413 [00:03<00:29, 12.45it/s][A[A
+
+Building containment graph:  12%|█▏        | 48/413 [00:03<00:28, 12.65it/s][A[A
+
+Building containment graph:  12%|█▏        | 50/413 [00:04<00:28, 12.75it/s][A[A
+
+Building containment graph:  13%|█▎        | 52/413 [00:04<00:28, 12.86it/s][A[A
+
+Building containment graph:  13%|█▎        | 54/413 [00:04<00:28, 12.68it/s][A[A
+
+Building containment graph:  14%|█▎        | 56/413 [00:04<00:28, 12.35it/s][A[A
+
+Building containment graph:  14%|█▍        | 58/413 [00:04<00:28, 12.44it/s][A[A
+
+Building containment graph:  15%|█▍        | 60/413 [00:04<00:29, 12.06it/s][A[A
+
+Building containment graph:  15%|█▌        | 62/413 [00:04<00:28, 12.33it/s][A[A
+
+Building containment graph:  15%|█▌        | 64/413 [00:05<00:28, 12.20it/s][A[A
+
+Building containment graph:  16%|█▌        | 66/413 [00:05<00:28, 12.38it/s][A[A
+
+Building containment graph:  16%|█▋        | 68/413 [00:05<00:28, 12.29it/s][A[A
+
+Building containment graph:  17%|█▋        | 70/413 [00:05<00:27, 12.38it/s][A[A
+
+Building containment graph:  17%|█▋        | 72/413 [00:05<00:27, 12.50it/s][A[A
+
+Building containment graph:  18%|█▊        | 74/413 [00:05<00:26, 12.68it/s][A[A
+
+Building containment graph:  18%|█▊        | 76/413 [00:06<00:26, 12.72it/s][A[A
+
+Building containment graph:  19%|█▉        | 78/413 [00:06<00:26, 12.71it/s][A[A
+
+Building containment graph:  19%|█▉        | 80/413 [00:06<00:26, 12.59it/s][A[A
+
+Building containment graph:  20%|█▉        | 82/413 [00:06<00:26, 12.71it/s][A[A
+
+Building containment graph:  20%|██        | 84/413 [00:06<00:26, 12.51it/s][A[A
+
+Building containment graph:  21%|██        | 86/413 [00:06<00:25, 12.74it/s][A[A
+
+Building containment graph:  21%|██▏       | 88/413 [00:07<00:25, 12.79it/s][A[A
+
+Building containment graph:  22%|██▏       | 90/413 [00:07<00:25, 12.77it/s][A[A
+
+Building containment graph:  22%|██▏       | 92/413 [00:07<00:25, 12.57it/s][A[A
+
+Building containment graph:  23%|██▎       | 94/413 [00:07<00:26, 11.91it/s][A[A
+
+Building containment graph:  23%|██▎       | 96/413 [00:07<00:26, 12.12it/s][A[A
+
+Building containment graph:  24%|██▎       | 98/413 [00:07<00:26, 11.70it/s][A[A
+
+Building containment graph:  24%|██▍       | 100/413 [00:08<00:26, 11.91it/s][A[A
+
+Building containment graph:  25%|██▍       | 102/413 [00:08<00:25, 12.17it/s][A[A
+
+Building containment graph:  25%|██▌       | 104/413 [00:08<00:24, 12.49it/s][A[A
+
+Building containment graph:  26%|██▌       | 106/413 [00:08<00:24, 12.42it/s][A[A
+
+Building containment graph:  26%|██▌       | 108/413 [00:08<00:24, 12.25it/s][A[A
+
+Building containment graph:  27%|██▋       | 110/413 [00:08<00:25, 11.85it/s][A[A
+
+Building containment graph:  27%|██▋       | 112/413 [00:09<00:24, 12.28it/s][A[A
+
+Building containment graph:  28%|██▊       | 114/413 [00:09<00:24, 12.33it/s][A[A
+
+Building containment graph:  28%|██▊       | 116/413 [00:09<00:23, 12.45it/s][A[A
+
+Building containment graph:  29%|██▊       | 118/413 [00:09<00:23, 12.62it/s][A[A
+
+Building containment graph:  29%|██▉       | 120/413 [00:09<00:23, 12.69it/s][A[A
+
+Building containment graph:  30%|██▉       | 122/413 [00:09<00:22, 12.73it/s][A[A
+
+Building containment graph:  30%|███       | 124/413 [00:09<00:22, 12.84it/s][A[A
+
+Building containment graph:  31%|███       | 126/413 [00:10<00:22, 12.75it/s][A[A
+
+Building containment graph:  31%|███       | 128/413 [00:10<00:22, 12.60it/s][A[A
+
+Building containment graph:  31%|███▏      | 130/413 [00:10<00:22, 12.48it/s][A[A
+
+Building containment graph:  32%|███▏      | 132/413 [00:10<00:22, 12.71it/s][A[A
+
+Building containment graph:  32%|███▏      | 134/413 [00:10<00:21, 12.82it/s][A[A
+
+Building containment graph:  33%|███▎      | 136/413 [00:10<00:22, 12.50it/s][A[A
+
+Building containment graph:  33%|███▎      | 138/413 [00:11<00:23, 11.47it/s][A[A
+
+Building containment graph:  34%|███▍      | 140/413 [00:11<00:23, 11.69it/s][A[A
+
+Building containment graph:  34%|███▍      | 142/413 [00:11<00:22, 11.82it/s][A[A
+
+Building containment graph:  35%|███▍      | 144/413 [00:11<00:22, 11.97it/s][A[A
+
+Building containment graph:  35%|███▌      | 146/413 [00:11<00:21, 12.27it/s][A[A
+
+Building containment graph:  36%|███▌      | 148/413 [00:11<00:21, 12.60it/s][A[A
+
+Building containment graph:  36%|███▋      | 150/413 [00:12<00:21, 12.06it/s][A[A
+
+Building containment graph:  37%|███▋      | 152/413 [00:12<00:20, 12.45it/s][A[A
+
+Building containment graph:  37%|███▋      | 154/413 [00:12<00:21, 11.89it/s][A[A
+
+Building containment graph:  38%|███▊      | 156/413 [00:12<00:21, 11.98it/s][A[A
+
+Building containment graph:  38%|███▊      | 158/413 [00:12<00:20, 12.14it/s][A[A
+
+Building containment graph:  39%|███▊      | 160/413 [00:12<00:20, 12.47it/s][A[A
+
+Building containment graph:  39%|███▉      | 162/413 [00:13<00:20, 12.53it/s][A[A
+
+Building containment graph:  40%|███▉      | 164/413 [00:13<00:19, 12.51it/s][A[A
+
+Building containment graph:  40%|████      | 166/413 [00:13<00:19, 12.51it/s][A[A
+
+Building containment graph:  41%|████      | 168/413 [00:13<00:19, 12.61it/s][A[A
+
+Building containment graph:  41%|████      | 170/413 [00:13<00:19, 12.49it/s][A[A
+
+Building containment graph:  42%|████▏     | 172/413 [00:13<00:19, 12.17it/s][A[A
+
+Building containment graph:  42%|████▏     | 174/413 [00:14<00:19, 12.25it/s][A[A
+
+Building containment graph:  43%|████▎     | 176/413 [00:14<00:19, 12.44it/s][A[A
+
+Building containment graph:  43%|████▎     | 178/413 [00:14<00:18, 12.53it/s][A[A
+
+Building containment graph:  44%|████▎     | 180/413 [00:14<00:18, 12.73it/s][A[A
+
+Building containment graph:  44%|████▍     | 182/413 [00:14<00:18, 12.82it/s][A[A
+
+Building containment graph:  45%|████▍     | 184/413 [00:14<00:17, 12.90it/s][A[A
+
+Building containment graph:  45%|████▌     | 186/413 [00:14<00:17, 12.65it/s][A[A
+
+Building containment graph:  46%|████▌     | 188/413 [00:15<00:17, 12.78it/s][A[A
+
+Building containment graph:  46%|████▌     | 190/413 [00:15<00:17, 12.97it/s][A[A
+
+Building containment graph:  46%|████▋     | 192/413 [00:15<00:17, 12.50it/s][A[A
+
+Building containment graph:  47%|████▋     | 194/413 [00:15<00:17, 12.43it/s][A[A
+
+Building containment graph:  47%|████▋     | 196/413 [00:15<00:17, 12.63it/s][A[A
+
+Building containment graph:  48%|████▊     | 198/413 [00:15<00:17, 12.29it/s][A[A
+
+Building containment graph:  48%|████▊     | 200/413 [00:16<00:16, 12.62it/s][A[A
+
+Building containment graph:  49%|████▉     | 202/413 [00:16<00:16, 12.78it/s][A[A
+
+Building containment graph:  49%|████▉     | 204/413 [00:16<00:16, 12.49it/s][A[A
+
+Building containment graph:  50%|████▉     | 206/413 [00:16<00:16, 12.46it/s][A[A
+
+Building containment graph:  50%|█████     | 208/413 [00:16<00:16, 12.67it/s][A[A
+
+Building containment graph:  51%|█████     | 210/413 [00:16<00:16, 12.29it/s][A[A
+
+Building containment graph:  51%|█████▏    | 212/413 [00:17<00:16, 12.40it/s][A[A
+
+Building containment graph:  52%|█████▏    | 214/413 [00:17<00:15, 12.53it/s][A[A
+
+Building containment graph:  52%|█████▏    | 216/413 [00:17<00:15, 12.54it/s][A[A
+
+Building containment graph:  53%|█████▎    | 218/413 [00:17<00:15, 12.23it/s][A[A
+
+Building containment graph:  53%|█████▎    | 220/413 [00:17<00:15, 12.34it/s][A[A
+
+Building containment graph:  54%|█████▍    | 222/413 [00:17<00:15, 12.37it/s][A[A
+
+Building containment graph:  54%|█████▍    | 224/413 [00:18<00:15, 12.49it/s][A[A
+
+Building containment graph:  55%|█████▍    | 226/413 [00:18<00:15, 12.37it/s][A[A
+
+Building containment graph:  55%|█████▌    | 228/413 [00:18<00:15, 12.27it/s][A[A
+
+Building containment graph:  56%|█████▌    | 230/413 [00:18<00:14, 12.58it/s][A[A
+
+Building containment graph:  56%|█████▌    | 232/413 [00:18<00:14, 12.70it/s][A[A
+
+Building containment graph:  57%|█████▋    | 234/413 [00:18<00:13, 12.84it/s][A[A
+
+Building containment graph:  57%|█████▋    | 236/413 [00:18<00:13, 12.77it/s][A[A
+
+Building containment graph:  58%|█████▊    | 238/413 [00:19<00:13, 12.87it/s][A[A
+
+Building containment graph:  58%|█████▊    | 240/413 [00:19<00:13, 12.99it/s][A[A
+
+Building containment graph:  59%|█████▊    | 242/413 [00:19<00:13, 13.03it/s][A[A
+
+Building containment graph:  59%|█████▉    | 244/413 [00:19<00:13, 12.86it/s][A[A
+
+Building containment graph:  60%|█████▉    | 246/413 [00:19<00:12, 12.89it/s][A[A
+
+Building containment graph:  60%|██████    | 248/413 [00:19<00:12, 12.84it/s][A[A
+
+Building containment graph:  61%|██████    | 250/413 [00:20<00:13, 12.38it/s][A[A
+
+Building containment graph:  61%|██████    | 252/413 [00:20<00:12, 12.40it/s][A[A
+
+Building containment graph:  62%|██████▏   | 254/413 [00:20<00:12, 12.55it/s][A[A
+
+Building containment graph:  62%|██████▏   | 256/413 [00:20<00:12, 12.66it/s][A[A
+
+Building containment graph:  62%|██████▏   | 258/413 [00:20<00:12, 12.80it/s][A[A
+
+Building containment graph:  63%|██████▎   | 260/413 [00:20<00:12, 12.60it/s][A[A
+
+Building containment graph:  63%|██████▎   | 262/413 [00:21<00:11, 12.59it/s][A[A
+
+Building containment graph:  64%|██████▍   | 264/413 [00:21<00:11, 12.63it/s][A[A
+
+Building containment graph:  64%|██████▍   | 266/413 [00:21<00:11, 12.70it/s][A[A
+
+Building containment graph:  65%|██████▍   | 268/413 [00:21<00:11, 12.70it/s][A[A
+
+Building containment graph:  65%|██████▌   | 270/413 [00:21<00:11, 12.54it/s][A[A
+
+Building containment graph:  66%|██████▌   | 272/413 [00:21<00:11, 12.54it/s][A[A
+
+Building containment graph:  66%|██████▋   | 274/413 [00:21<00:11, 12.25it/s][A[A
+
+Building containment graph:  67%|██████▋   | 276/413 [00:22<00:10, 12.47it/s][A[A
+
+Building containment graph:  67%|██████▋   | 278/413 [00:22<00:10, 12.31it/s][A[A
+
+Building containment graph:  68%|██████▊   | 280/413 [00:22<00:10, 12.48it/s][A[A
+
+Building containment graph:  68%|██████▊   | 282/413 [00:22<00:10, 12.46it/s][A[A
+
+Building containment graph:  69%|██████▉   | 284/413 [00:22<00:10, 12.25it/s][A[A
+
+Building containment graph:  69%|██████▉   | 286/413 [00:22<00:10, 12.17it/s][A[A
+
+Building containment graph:  70%|██████▉   | 288/413 [00:23<00:10, 12.41it/s][A[A
+
+Building containment graph:  70%|███████   | 290/413 [00:23<00:09, 12.53it/s][A[A
+
+Building containment graph:  71%|███████   | 292/413 [00:23<00:09, 12.75it/s][A[A
+
+Building containment graph:  71%|███████   | 294/413 [00:23<00:09, 12.76it/s][A[A
+
+Building containment graph:  72%|███████▏  | 296/413 [00:23<00:09, 12.55it/s][A[A
+
+Building containment graph:  72%|███████▏  | 298/413 [00:23<00:09, 12.62it/s][A[A
+
+Building containment graph:  73%|███████▎  | 300/413 [00:24<00:08, 12.80it/s][A[A
+
+Building containment graph:  73%|███████▎  | 302/413 [00:24<00:08, 12.87it/s][A[A
+
+Building containment graph:  74%|███████▎  | 304/413 [00:24<00:08, 12.73it/s][A[A
+
+Building containment graph:  74%|███████▍  | 306/413 [00:24<00:08, 12.55it/s][A[A
+
+Building containment graph:  75%|███████▍  | 308/413 [00:24<00:08, 12.72it/s][A[A
+
+Building containment graph:  75%|███████▌  | 310/413 [00:24<00:08, 12.55it/s][A[A
+
+Building containment graph:  76%|███████▌  | 312/413 [00:24<00:08, 12.57it/s][A[A
+
+Building containment graph:  76%|███████▌  | 314/413 [00:25<00:07, 12.76it/s][A[A
+
+Building containment graph:  77%|███████▋  | 316/413 [00:25<00:07, 12.79it/s][A[A
+
+Building containment graph:  77%|███████▋  | 318/413 [00:25<00:07, 12.70it/s][A[A
+
+Building containment graph:  77%|███████▋  | 320/413 [00:25<00:07, 12.30it/s][A[A
+
+Building containment graph:  78%|███████▊  | 322/413 [00:25<00:07, 12.40it/s][A[A
+
+Building containment graph:  78%|███████▊  | 324/413 [00:25<00:07, 12.53it/s][A[A
+
+Building containment graph:  79%|███████▉  | 326/413 [00:26<00:06, 12.50it/s][A[A
+
+Building containment graph:  79%|███████▉  | 328/413 [00:26<00:06, 12.64it/s][A[A
+
+Building containment graph:  80%|███████▉  | 330/413 [00:26<00:06, 12.74it/s][A[A
+
+Building containment graph:  80%|████████  | 332/413 [00:26<00:06, 12.63it/s][A[A
+
+Building containment graph:  81%|████████  | 334/413 [00:26<00:06, 12.73it/s][A[A
+
+Building containment graph:  81%|████████▏ | 336/413 [00:26<00:06, 12.71it/s][A[A
+
+Building containment graph:  82%|████████▏ | 338/413 [00:27<00:06, 12.23it/s][A[A
+
+Building containment graph:  82%|████████▏ | 340/413 [00:27<00:06, 11.87it/s][A[A
+
+Building containment graph:  83%|████████▎ | 342/413 [00:27<00:05, 12.19it/s][A[A
+
+Building containment graph:  83%|████████▎ | 344/413 [00:27<00:05, 12.46it/s][A[A
+
+Building containment graph:  84%|████████▍ | 346/413 [00:27<00:05, 12.37it/s][A[A
+
+Building containment graph:  84%|████████▍ | 348/413 [00:27<00:05, 12.11it/s][A[A
+
+Building containment graph:  85%|████████▍ | 350/413 [00:28<00:05, 12.37it/s][A[A
+
+Building containment graph:  85%|████████▌ | 352/413 [00:28<00:04, 12.43it/s][A[A
+
+Building containment graph:  86%|████████▌ | 354/413 [00:28<00:04, 12.56it/s][A[A
+
+Building containment graph:  86%|████████▌ | 356/413 [00:28<00:04, 12.44it/s][A[A
+
+Building containment graph:  87%|████████▋ | 358/413 [00:28<00:04, 12.56it/s][A[A
+
+Building containment graph:  87%|████████▋ | 360/413 [00:28<00:04, 12.78it/s][A[A
+
+Building containment graph:  88%|████████▊ | 362/413 [00:28<00:04, 12.70it/s][A[A
+
+Building containment graph:  88%|████████▊ | 364/413 [00:29<00:03, 12.89it/s][A[A
+
+Building containment graph:  89%|████████▊ | 366/413 [00:29<00:03, 12.64it/s][A[A
+
+Building containment graph:  89%|████████▉ | 368/413 [00:29<00:03, 12.61it/s][A[A
+
+Building containment graph:  90%|████████▉ | 370/413 [00:29<00:03, 12.33it/s][A[A
+
+Building containment graph:  90%|█████████ | 372/413 [00:29<00:03, 12.53it/s][A[A
+
+Building containment graph:  91%|█████████ | 374/413 [00:29<00:03, 11.92it/s][A[A
+
+Building containment graph:  91%|█████████ | 376/413 [00:30<00:03, 12.17it/s][A[A
+
+Building containment graph:  92%|█████████▏| 378/413 [00:30<00:02, 12.12it/s][A[A
+
+Building containment graph:  92%|█████████▏| 380/413 [00:30<00:02, 12.08it/s][A[A
+
+Building containment graph:  92%|█████████▏| 382/413 [00:30<00:02, 12.13it/s][A[A
+
+Building containment graph:  93%|█████████▎| 384/413 [00:30<00:02, 11.97it/s][A[A
+
+Building containment graph:  93%|█████████▎| 386/413 [00:30<00:02, 12.20it/s][A[A
+
+Building containment graph:  94%|█████████▍| 388/413 [00:31<00:02, 12.43it/s][A[A
+
+Building containment graph:  94%|█████████▍| 390/413 [00:31<00:01, 12.55it/s][A[A
+
+Building containment graph:  95%|█████████▍| 392/413 [00:31<00:01, 12.41it/s][A[A
+
+Building containment graph:  95%|█████████▌| 394/413 [00:31<00:01, 12.73it/s][A[A
+
+Building containment graph:  96%|█████████▌| 396/413 [00:31<00:01, 12.94it/s][A[A
+
+Building containment graph:  96%|█████████▋| 398/413 [00:31<00:01, 12.82it/s][A[A
+
+Building containment graph:  97%|█████████▋| 400/413 [00:32<00:01, 12.87it/s][A[A
+
+Building containment graph:  97%|█████████▋| 402/413 [00:32<00:00, 12.88it/s][A[A
+
+Building containment graph:  98%|█████████▊| 404/413 [00:32<00:00, 12.94it/s][A[A
+
+Building containment graph:  98%|█████████▊| 406/413 [00:32<00:00, 12.53it/s][A[A
+
+Building containment graph:  99%|█████████▉| 408/413 [00:32<00:00, 12.63it/s][A[A
+
+Building containment graph:  99%|█████████▉| 410/413 [00:32<00:00, 12.74it/s][A[A
+
+Building containment graph: 100%|█████████▉| 412/413 [00:32<00:00, 12.85it/s][A[ABuilding containment graph: 100%|██████████| 413/413 [00:33<00:00, 12.49it/s]
+
+Processing classes: 100%|██████████| 1/1 [00:33<00:00, 33.07s/it][AProcessing classes: 100%|██████████| 1/1 [00:33<00:00, 33.07s/it]
+/home/luca/Documents/LTL_TOOL/ltl_optimizer.py:322: UserWarning: This figure includes Axes that are not compatible with tight_layout, so results might be incorrect.
+  plt.tight_layout()
+Processing benchmarks:   1%|          | 1/142 [01:00<2:22:09, 60.49s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 413
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.636s
+  Containment analysis: 33.069s
+  Total time: 33.705s
+
+Optimization Results:
+  Original formulas: 413
+  Optimized formulas: 168
+  Reduction: 59.3%
+============================================================
+Optimizing 9 LTL formulas for benchmark: anderson.1_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2677.79it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 279.55it/s]
+Processing benchmarks:   1%|▏         | 2/142 [01:01<59:11, 25.37s/it]  
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.004s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: anderson.2_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2585.71it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 271.53it/s]
+Processing benchmarks:   2%|▏         | 3/142 [01:02<32:47, 14.15s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.005s
+  Containment analysis: 0.004s
+  Total time: 0.009s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: anderson.3_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2613.27it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 273.67it/s]
+Processing benchmarks:   3%|▎         | 4/142 [01:02<20:26,  8.89s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.005s
+  Containment analysis: 0.004s
+  Total time: 0.009s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: anderson.4_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2433.05it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 255.98it/s]
+Processing benchmarks:   4%|▎         | 5/142 [01:03<13:38,  5.97s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.004s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 8 LTL formulas for benchmark: anderson.5_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/8 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 8/8 [00:00<00:00, 2182.40it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 258.89it/s]
+Processing benchmarks:   4%|▍         | 6/142 [01:04<09:31,  4.20s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 8
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.004s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 8
+  Optimized formulas: 5
+  Reduction: 37.5%
+============================================================
+Optimizing 9 LTL formulas for benchmark: anderson.6_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2597.63it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 273.24it/s]
+Processing benchmarks:   5%|▍         | 7/142 [01:05<06:56,  3.09s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.004s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 7 LTL formulas for benchmark: anderson.7_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/7 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 7/7 [00:00<00:00, 3574.40it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 461.01it/s]
+Processing benchmarks:   6%|▌         | 8/142 [01:06<05:14,  2.35s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 7
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.003s
+  Containment analysis: 0.002s
+  Total time: 0.006s
+
+Optimization Results:
+  Original formulas: 7
+  Optimized formulas: 4
+  Reduction: 42.9%
+============================================================
+Optimizing 4 LTL formulas for benchmark: anderson.8_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/4 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 4/4 [00:00<00:00, 4443.12it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 917.79it/s]
+Processing benchmarks:   6%|▋         | 9/142 [01:06<04:04,  1.84s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 4
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.002s
+  Containment analysis: 0.001s
+  Total time: 0.004s
+
+Optimization Results:
+  Original formulas: 4
+  Optimized formulas: 3
+  Reduction: 25.0%
+============================================================
+Optimizing 6 LTL formulas for benchmark: at.1_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/6 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 6/6 [00:00<00:00, 9171.22it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 1187.52it/s]
+Processing benchmarks:   7%|▋         | 10/142 [01:07<03:17,  1.49s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 6
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.002s
+  Containment analysis: 0.001s
+  Total time: 0.003s
+
+Optimization Results:
+  Original formulas: 6
+  Optimized formulas: 3
+  Reduction: 50.0%
+============================================================
+Optimizing 6 LTL formulas for benchmark: at.2_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/6 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 6/6 [00:00<00:00, 9386.73it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 1201.46it/s]
+Processing benchmarks:   8%|▊         | 11/142 [01:08<02:45,  1.26s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 6
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.002s
+  Containment analysis: 0.001s
+  Total time: 0.003s
+
+Optimization Results:
+  Original formulas: 6
+  Optimized formulas: 3
+  Reduction: 50.0%
+============================================================
+Optimizing 6 LTL formulas for benchmark: at.3_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/6 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 6/6 [00:00<00:00, 8253.80it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 1086.33it/s]
+Processing benchmarks:   8%|▊         | 12/142 [01:08<02:24,  1.11s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 6
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.002s
+  Containment analysis: 0.001s
+  Total time: 0.003s
+
+Optimization Results:
+  Original formulas: 6
+  Optimized formulas: 3
+  Reduction: 50.0%
+============================================================
+Optimizing 6 LTL formulas for benchmark: at.4_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/6 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 6/6 [00:00<00:00, 6913.69it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 945.73it/s]
+Processing benchmarks:   9%|▉         | 13/142 [01:09<02:08,  1.00it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 6
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.002s
+  Containment analysis: 0.001s
+  Total time: 0.004s
+
+Optimization Results:
+  Original formulas: 6
+  Optimized formulas: 3
+  Reduction: 50.0%
+============================================================
+Optimizing 12 LTL formulas for benchmark: at.5_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/12 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 12/12 [00:00<00:00, 3828.38it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 300.45it/s]
+Processing benchmarks:  10%|▉         | 14/142 [01:10<02:04,  1.03it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 12
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.003s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 12
+  Optimized formulas: 1
+  Reduction: 91.7%
+============================================================
+Optimizing 6 LTL formulas for benchmark: at.6_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/6 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 6/6 [00:00<00:00, 6775.94it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 920.21it/s]
+Processing benchmarks:  11%|█         | 15/142 [01:11<01:54,  1.11it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 6
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.002s
+  Containment analysis: 0.001s
+  Total time: 0.004s
+
+Optimization Results:
+  Original formulas: 6
+  Optimized formulas: 3
+  Reduction: 50.0%
+============================================================
+Optimizing 5 LTL formulas for benchmark: at.7_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/5 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 5/5 [00:00<00:00, 9541.18it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 1399.50it/s]
+Processing benchmarks:  11%|█▏        | 16/142 [01:12<01:45,  1.19it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 5
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.002s
+  Containment analysis: 0.001s
+  Total time: 0.003s
+
+Optimization Results:
+  Original formulas: 5
+  Optimized formulas: 4
+  Reduction: 20.0%
+============================================================
+Optimizing 9 LTL formulas for benchmark: bakery.1_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2584.11it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 271.90it/s]
+Processing benchmarks:  12%|█▏        | 17/142 [01:12<01:43,  1.21it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.004s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: bakery.2_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2543.03it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 267.63it/s]
+Processing benchmarks:  13%|█▎        | 18/142 [01:13<01:41,  1.22it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.004s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: bakery.3_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2646.43it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 278.17it/s]
+Processing benchmarks:  13%|█▎        | 19/142 [01:14<01:39,  1.24it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.005s
+  Containment analysis: 0.004s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: bakery.4_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2479.07it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 261.16it/s]
+Processing benchmarks:  14%|█▍        | 20/142 [01:15<01:38,  1.24it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.005s
+  Containment analysis: 0.004s
+  Total time: 0.009s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: bakery.5_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2382.83it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 250.87it/s]
+Processing benchmarks:  15%|█▍        | 21/142 [01:16<01:37,  1.24it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.004s
+  Total time: 0.009s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: bakery.6_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2452.49it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 258.68it/s]
+Processing benchmarks:  15%|█▌        | 22/142 [01:16<01:37,  1.23it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.004s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: bakery.7_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2363.58it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 249.74it/s]
+Processing benchmarks:  16%|█▌        | 23/142 [01:17<01:36,  1.24it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.004s
+  Total time: 0.008s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 9 LTL formulas for benchmark: bakery.8_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/9 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 9/9 [00:00<00:00, 2202.38it/s]
+Processing classes: 100%|██████████| 1/1 [00:00<00:00, 233.57it/s]
+Processing benchmarks:  17%|█▋        | 24/142 [01:18<01:35,  1.23it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 9
+Number of equivalence classes: 1
+Classes with single formula: 0
+Classes with multiple formulas: 1
+
+Performance:
+  Equivalence class construction: 0.005s
+  Containment analysis: 0.004s
+  Total time: 0.009s
+
+Optimization Results:
+  Original formulas: 9
+  Optimized formulas: 3
+  Reduction: 66.7%
+============================================================
+Optimizing 8 LTL formulas for benchmark: bopdp.1_000
+
+Processing classes:   0%|          | 0/2 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/4 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 4/4 [00:00<00:00, 24745.16it/s]
+
+
+Building containment graph:   0%|          | 0/4 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 4/4 [00:00<00:00, 24708.71it/s]
+Processing classes: 100%|██████████| 2/2 [00:00<00:00, 3008.83it/s]
+Processing benchmarks:  18%|█▊        | 25/142 [01:19<01:47,  1.09it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 8
+Number of equivalence classes: 2
+Classes with single formula: 0
+Classes with multiple formulas: 2
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.001s
+  Total time: 0.005s
+
+Optimization Results:
+  Original formulas: 8
+  Optimized formulas: 8
+  Reduction: 0.0%
+============================================================
+Optimizing 8 LTL formulas for benchmark: bopdp.2_000
+
+Processing classes:   0%|          | 0/2 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/4 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 4/4 [00:00<00:00, 23172.95it/s]
+
+
+Building containment graph:   0%|          | 0/4 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 4/4 [00:00<00:00, 24528.09it/s]
+Processing classes: 100%|██████████| 2/2 [00:00<00:00, 2907.66it/s]
+Processing benchmarks:  18%|█▊        | 26/142 [01:20<01:53,  1.02it/s]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 8
+Number of equivalence classes: 2
+Classes with single formula: 0
+Classes with multiple formulas: 2
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.001s
+  Total time: 0.005s
+
+Optimization Results:
+  Original formulas: 8
+  Optimized formulas: 8
+  Reduction: 0.0%
+============================================================
+Optimizing 8 LTL formulas for benchmark: bopdp.3_000
+
+Processing classes:   0%|          | 0/2 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/4 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 4/4 [00:00<00:00, 21481.71it/s]
+
+
+Building containment graph:   0%|          | 0/4 [00:00<?, ?it/s][A[ABuilding containment graph: 100%|██████████| 4/4 [00:00<00:00, 27016.45it/s]
+Processing classes: 100%|██████████| 2/2 [00:00<00:00, 2930.01it/s]
+Processing benchmarks:  19%|█▉        | 27/142 [01:21<01:57,  1.02s/it]
+============================================================
+OPTIMIZATION SUMMARY
+============================================================
+Total formulas processed: 8
+Number of equivalence classes: 2
+Classes with single formula: 0
+Classes with multiple formulas: 2
+
+Performance:
+  Equivalence class construction: 0.004s
+  Containment analysis: 0.001s
+  Total time: 0.005s
+
+Optimization Results:
+  Original formulas: 8
+  Optimized formulas: 8
+  Reduction: 0.0%
+============================================================
+Optimizing 429 LTL formulas for benchmark: bridge.3_000
+
+Processing classes:   0%|          | 0/1 [00:00<?, ?it/s][A
+
+Building containment graph:   0%|          | 0/429 [00:00<?, ?it/s][A[A
+
+Building containment graph:   0%|          | 1/429 [00:06<49:25,  6.93s/it][A[A
+
+Building containment graph:   0%|          | 2/429 [00:13<48:21,  6.79s/it][A[A
+
+Building containment graph:   1%|          | 3/429 [00:21<50:56,  7.17s/it][A[A
+
+Building containment graph:   1%|          | 4/429 [00:28<52:18,  7.38s/it][A[A
+
+Building containment graph:   1%|          | 5/429 [00:35<49:22,  6.99s/it][A[A
+
+Building containment graph:   1%|▏         | 6/429 [00:43<53:20,  7.57s/it][A[A
+
+Building containment graph:   2%|▏         | 7/429 [00:51<52:31,  7.47s/it][A[A

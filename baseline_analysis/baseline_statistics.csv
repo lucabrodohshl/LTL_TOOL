@@ -1,0 +1,14 @@
+Metric,Value
+Total Benchmarks,142
+Total Properties,4071
+Total Runtime,277171.08169563324
+Average Runtime per Benchmark,1951.9090260255862
+Median Runtime per Benchmark,53.29894166562008
+Average Properties per Benchmark,28.669014084507044
+Total Timeouts,202
+Benchmarks with Timeouts,34
+Overall Timeout Rate,4.9619258167526406
+Fastest Benchmark,extinction.1_000
+Slowest Benchmark,cyclic_scheduler.3_000
+Most Properties,leader-election.3_000
+Fewest Properties,extinction.1_000

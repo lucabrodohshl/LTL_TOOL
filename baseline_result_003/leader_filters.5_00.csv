@@ -1,0 +1,3 @@
+,formula,time,result
+0,"!(<>((""P_0==elected"") || (""P_1==elected"") || (""P_2==elected"") || (""P_3==elected"") || (""P_4==elected"")))",3.4372051040409133,False
+1,"!(!<>((""P_0==elected"") || (""P_1==elected"") || (""P_2==elected"") || (""P_3==elected"") || (""P_4==elected"")))",3.2062814759556204,True
