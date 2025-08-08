@@ -41,34 +41,6 @@ def example_single_benchmark():
         print(f"Benchmark folder not found: {benchmark_path}")
 
 
-def example_custom_formulas():
-    """Example: Analyze custom LTL formulas."""
-    
-    # Custom set of LTL formulas
-    formulas = [
-        "G(a)",
-        "F(b)",
-        "G(a) & X(a)",
-        "F(b) | G(c)",
-        "G(a)",  # Duplicate
-        "a U b",
-        "G(F(a))",
-        "F(G(b))"
-    ]
-    
-    print("Analyzing custom formula set:")
-    for i, formula in enumerate(formulas):
-        print(f"  {i}: {formula}")
-    
-    optimizer = LTLOptimizer(enable_visualization=False, verbose=True)
-    metrics = optimizer.optimize_formulas(formulas, "custom_example")
-    
-    print(f"\nOptimization completed:")
-    print(f"Original: {len(formulas)} formulas")
-    print(f"Optimized: {metrics.optimized_formula_count} formulas")
-    print(f"Reduction: {metrics.reduction_percentage:.1f}%")
-
-
 def example_performance_measurement():
     """Example: Measure performance across different formula set sizes."""
     
@@ -104,18 +76,6 @@ def main():
     print("\n1. Single Benchmark Analysis")
     print("-" * 30)
     example_single_benchmark()
-    
-    ## Example 2: Custom formulas
-    #print("\n\n2. Custom Formula Set Analysis")
-    #print("-" * 30)
-    #example_custom_formulas()
-    
-    ## Example 3: Performance measurement
-    #print("\n\n3. Performance Measurement")
-    #print("-" * 30)
-    #example_performance_measurement()
-    #
-    #print("\n\nAll examples completed!")
 
 
 if __name__ == "__main__":

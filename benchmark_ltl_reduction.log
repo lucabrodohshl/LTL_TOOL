@@ -17843,3 +17843,11 @@ Optimizing 633 LTL formulas for benchmark: leader-election.3_000
 Building containment graph:  10%|▉         | 62/633 [1:11:42<10:22:55, 65.46s/it][A[A
 
 Building containment graph:  10%|▉         | 63/633 [1:13:01<11:01:22, 69.62s/it][A[A
+
+Building containment graph:  10%|█         | 64/633 [1:15:53<15:51:58, 100.38s/it][A[A
+
+Building containment graph:  10%|█         | 65/633 [1:17:04<14:26:12, 91.50s/it] [A[A
+
+Building containment graph:  10%|█         | 66/633 [1:17:42<11:53:53, 75.54s/it][A[A
+
+Building containment graph:  11%|█         | 67/633 [1:18:50<11:30:23, 73.19s/it][A[A
