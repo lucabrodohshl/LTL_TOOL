@@ -171,7 +171,7 @@ def main():
     )
     
     # Run individual analyses or complete suite
-    if args.skip_reduction and args.skip_complexity and args.skip_impact:
+    if args.skip_reduction and args.skip_complexity and args.skip_impact and args.skip_mc_analysis:
         print(" Error: All analyses are skipped. Nothing to do.")
         sys.exit(1)
     
@@ -190,7 +190,6 @@ def main():
         #results['Complexity Impact'] = orchestrator.run_complexity_impact_summary()
     
     if not args.skip_mc_analysis:
-
         results['Model Checking Analysis'] = orchestrator.run_model_checking_analysis(
             model_checking_path=args.mc_analysis_path
             )
