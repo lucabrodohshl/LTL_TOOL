@@ -497,7 +497,8 @@ class LTLOptimizer:
     def process_multiple_benchmarks(self, benchmark_folder: str, 
                                    ltl_output_folder: Optional[str] = None,
                                    graph_output_folder: Optional[str] = None,
-                                   result_folder: Optional[str] = None) -> Dict[str, OptimizationMetrics]:
+                                   result_folder: Optional[str] = None, 
+                                   start_from : Optional[int]=0) -> Dict[str, OptimizationMetrics]:
         """
         Process multiple benchmark folders and optionally save results.
         
@@ -517,7 +518,7 @@ class LTLOptimizer:
             if folder and not os.path.exists(folder):
                 os.makedirs(folder, exist_ok=True)
         
-        benchmark_folders = sorted(os.listdir(benchmark_folder))
+        benchmark_folders = sorted(os.listdir(benchmark_folder))[start_from:]
         
         for folder_name in tqdm(benchmark_folders, desc="Processing benchmarks"):
             folder_path = os.path.join(benchmark_folder, folder_name)

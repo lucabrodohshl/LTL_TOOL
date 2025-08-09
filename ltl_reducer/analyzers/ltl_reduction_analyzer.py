@@ -1711,6 +1711,17 @@ class LTLReductionAnalyzer:
         print("Starting comprehensive LTL reduction analysis...")
         print("=" * 60)
         
+        print("1. Creating performance outliers analysis...")
+        # Load standard data for outliers analysis
+        summary_df, _ = self.load_optimization_data(results_folder)
+        if summary_df is not None and not summary_df.empty:
+            self.create_performance_outliers_analysis(summary_df)
+        
+    
+        print("\n7. Generating normal reduction analysis...")
+        summary_df, stats = self.analyze_ltl_reduction(results_folder)
+
+
         # Load data for comprehensive analysis
         df = self.load_comprehensive_data()
         
@@ -1730,18 +1741,9 @@ class LTLReductionAnalyzer:
         print("\n5. Creating no-zero reduction analysis...")
         self.create_no_zero_analysis(df)
         
-        print("\n6. Creating performance outliers analysis...")
-        # Load standard data for outliers analysis
-        summary_df, _ = self.load_optimization_data("optimized_results")
-        if summary_df is not None and not summary_df.empty:
-            self.create_performance_outliers_analysis(summary_df)
-        
         print("\n7. Generating detailed report...")
         self.generate_detailed_report(df)
-
-        print("\n7. Generating normal reduction analysis...")
-        summary_df, stats = self.analyze_ltl_reduction(results_folder)
-
+        
         
         # Save complete dataset with derived columns
         if self.save_plots:

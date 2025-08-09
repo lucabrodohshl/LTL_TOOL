@@ -1,0 +1,6 @@
+!(![](("CC==doneCheckedOut") -> <>(("CC==doneCheckIn") || ("CC==doneUnCheckOut"))))
+!(!(!(!(("User_0==doneGet") || ("User_0==doneRegister")) U ("UserAdmin_0==doneNotify")) && [](("User_0==doneUnRegister") -> !(!(("User_0==doneGet") || ("User_0==doneRegister")) U ("UserAdmin_0==doneNotify")))))
+!(!(!(("User_0==doneGet") || ("User_0==doneRegister")) U ("UserAdmin_0==doneNotify")) && [](("User_0==doneUnRegister") -> !(!(("User_0==doneGet") || ("User_0==doneRegister")) U ("UserAdmin_0==doneNotify"))))
+!(![](("CC==doneCheckOut") -> <>(("CC==doneCheckedOut") || ("CC==doneNotAvailable"))))
+!([](("CC==doneCheckedOut") -> <>(("CC==doneCheckIn") || ("CC==doneUnCheckOut"))))
+!([](("CC==doneCheckOut") -> <>(("CC==doneCheckedOut") || ("CC==doneNotAvailable"))))

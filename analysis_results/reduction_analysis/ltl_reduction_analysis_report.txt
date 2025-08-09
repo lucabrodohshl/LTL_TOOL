@@ -1,26 +1,26 @@
 ================================================================================
 LTL REDUCTION ANALYSIS REPORT
 ================================================================================
-Generated: 2025-08-08 20:25:02
-Total Benchmarks Analyzed: 91
+Generated: 2025-08-09 14:29:32
+Total Benchmarks Analyzed: 142
 
 OVERALL STATISTICS
 ----------------------------------------
-Total formulas processed: 2,682
-Total original formula count: 2,682
-Total optimized formula count: 1,723
-Overall reduction achieved: 35.76%
-Total processing time: 20182.17 seconds
-Average time per formula: 7.525044 seconds
+Total formulas processed: 3,628
+Total original formula count: 3,628
+Total optimized formula count: 2,334
+Overall reduction achieved: 35.67%
+Total processing time: 67045.50 seconds
+Average time per formula: 18.480017 seconds
 
 ZERO REDUCTION ANALYSIS
 ----------------------------------------
-Benchmarks with 0% reduction: 20
-Percentage of total benchmarks: 22.0%
-Zero reduction formulas: 79
-Percentage of total formulas: 2.9%
-Average formula count in zero reduction: 4.0
-Average time per formula: 0.000807s
+Benchmarks with 0% reduction: 32
+Percentage of total benchmarks: 22.5%
+Zero reduction formulas: 122
+Percentage of total formulas: 3.4%
+Average formula count in zero reduction: 3.8
+Average time per formula: 0.000781s
 
 Zero reduction benchmarks:
   bopdp.1_000: 8 formulas, 0.0053s total
@@ -43,6 +43,18 @@ Zero reduction benchmarks:
   extinction.2_000: 2 formulas, 0.0010s total
   extinction.3_000: 2 formulas, 0.0012s total
   extinction.4_000: 2 formulas, 0.0012s total
+  leader_filters.1_000: 2 formulas, 0.0018s total
+  leader_filters.2_000: 2 formulas, 0.0018s total
+  leader_filters.3_000: 2 formulas, 0.0014s total
+  leader_filters.4_000: 2 formulas, 0.0014s total
+  leader_filters.5_000: 2 formulas, 0.0016s total
+  leader_filters.6_000: 2 formulas, 0.0014s total
+  leader_filters.7_000: 2 formulas, 0.0015s total
+  public_subscribe.1_000: 6 formulas, 0.0042s total
+  public_subscribe.2_000: 6 formulas, 0.0039s total
+  public_subscribe.3_000: 6 formulas, 0.0042s total
+  public_subscribe.4_000: 6 formulas, 0.0040s total
+  public_subscribe.5_000: 5 formulas, 0.0036s total
 
 SIZE CATEGORY ANALYSIS
 ----------------------------------------
@@ -61,39 +73,39 @@ Medium (11-50):
   Zero reduction cases: 0
 
 Small (5-10):
-  Benchmarks: 51
-  Total formulas: 355
-  Average reduction: 50.1%
-  Average time per formula: 0.001012s
-  Zero reduction cases: 3
+  Benchmarks: 94
+  Total formulas: 654
+  Average reduction: 43.8%
+  Average time per formula: 0.001001s
+  Zero reduction cases: 8
 
 Tiny (≤4):
-  Benchmarks: 28
-  Total formulas: 99
-  Average reduction: 18.8%
-  Average time per formula: 0.000854s
-  Zero reduction cases: 17
+  Benchmarks: 35
+  Total formulas: 113
+  Average reduction: 15.0%
+  Average time per formula: 0.000838s
+  Zero reduction cases: 24
 
 Very Large (100+):
-  Benchmarks: 5
-  Total formulas: 2025
-  Average reduction: 32.9%
-  Average time per formula: 8.937059s
+  Benchmarks: 6
+  Total formulas: 2658
+  Average reduction: 33.3%
+  Average time per formula: 19.786416s
   Zero reduction cases: 0
 
 PERFORMANCE INSIGHTS
 ----------------------------------------
 Best reduction: at.5_000 (91.7%)
-Slowest per formula: elevator.4_000 (22.307792s)
+Slowest per formula: leader-election.3_000 (74.033198s)
 
 Correlations:
-Reduction % vs Time per formula: -0.063
-Formula count vs Reduction %: -0.041
+Reduction % vs Time per formula: -0.015
+Formula count vs Reduction %: -0.006
 
 RECOMMENDATIONS
 ----------------------------------------
 • Zero reduction cases are primarily small benchmarks (≤10 formulas)
 • Consider focusing optimization efforts on larger benchmark sets
-• Good overall reduction rate of 35.8%
+• Good overall reduction rate of 35.7%
 
 ================================================================================

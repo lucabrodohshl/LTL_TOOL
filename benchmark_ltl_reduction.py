@@ -11,7 +11,7 @@ import pandas as pd
 from typing import Dict, List
 from ltl_optimizer import LTLOptimizer, OptimizationMetrics
 
-
+START_FROM_BENCHMARK = 120
 def create_detailed_csv_report(results: Dict[str, OptimizationMetrics], result_folder: str):
     """
     Create detailed CSV reports from benchmark results.
@@ -153,7 +153,8 @@ def main():
         benchmark_folder=BENCHMARK_FOLDER,
         ltl_output_folder=LTL_OUTPUT_FOLDER,
         graph_output_folder=GRAPH_OUTPUT_FOLDER,
-        result_folder=RESULT_FOLDER
+        result_folder=RESULT_FOLDER, 
+        start_from=START_FROM_BENCHMARK  
     )
     total_time = time.time() - start_time
     

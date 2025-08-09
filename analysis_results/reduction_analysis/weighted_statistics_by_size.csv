@@ -1,6 +1,6 @@
 Size_Category,Reduction_Percentage_mean,Reduction_Percentage_std,Reduction_Percentage_count,Time_Per_Formula_mean,Time_Per_Formula_std,Total_Formulas_sum
 Large (51-100),19.7887,13.8434,2,0.1879,0.2336,131.0
 Medium (11-50),50.7239,30.04,5,0.1648,0.3649,72.0
-Small (5-10),50.0724,16.3682,51,0.001,0.0003,355.0
-Tiny (≤4),18.75,24.1762,28,0.0009,0.0001,99.0
-Very Large (100+),32.9176,20.5027,5,8.9371,9.319,2025.0
+Small (5-10),43.8159,19.727,94,0.001,0.0003,654.0
+Tiny (≤4),15.0,22.8486,35,0.0008,0.0001,113.0
+Very Large (100+),33.3292,18.3659,6,19.7864,27.8519,2658.0
