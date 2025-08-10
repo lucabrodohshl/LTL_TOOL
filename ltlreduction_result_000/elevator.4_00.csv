@@ -1,0 +1,5 @@
+,formula,time,result
+0,"!(![]((""Person_0==waiting"") -> <>(""Person_0==in_elevator"")))",3.111717185936868,True
+1,"!([]((""Person_0==in_elevator"") -> <>(""Person_0==out"")))",1.9481697080191225,False
+2,"!([]((""Person_0==waiting"") -> <>(""Person_0==in_elevator"")))",1.985682513914071,False
+3,"!(![]((""Person_0==in_elevator"") -> <>(""Person_0==out"")))",2.3129925329703838,True

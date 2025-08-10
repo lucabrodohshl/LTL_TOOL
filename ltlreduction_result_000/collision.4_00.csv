@@ -1,0 +1,26 @@
+,formula,time,result
+0,"!(!<>([]<>(""User1==wrong_data"" -> ""Slave3==got"") && (!(""Medium==collision"" <-> ""Medium==got"") <-> (""User4==wrong_data"" U ""Medium==got""))))",1000.0,
+1,"!(!(X <>(<>""Medium==got"" U []""User4==wrong_data"") <-> (""User2==got"" && ((""Medium==broadcast"" R ""User2==got"") R (""User3==wrong_data"" || (""Medium==broadcast"" R ""User2==got""))))))",1000.0,
+2,"!(X []<>!(<>[]""Medium==got"" <-> []!(X ""User4==got"" <-> (""Slave1==got"" U ""Slave2==enquire""))))",1000.0,
+3,"!(!(!""User4==got"" <-> (!<>""User2==wrong_data"" || <>([]""Slave4==got"" || <>""User2==got""))))",41.619652331923135,True
+4,"!(""User2==got"" U <>(<>""User4==wrong_data"" R (""User3==got"" || !(<>""Medium==got"" <-> (X ""Master==wait"" R ""Slave3==enquire"")))))",1000.0,
+5,"!(<>[]""Slave2==got"" <-> ((""Medium==collision"" <-> <>""Slave2==enquire"") -> !(""Master==wait"" U (""User1==got"" -> ""Slave3==got""))))",1000.0,
+6,"!(<>(([]X ""User3==got"" R (""Medium==got"" U ""Slave3==enquire"")) || !(""User1==wrong_data"" <-> (""User1==wrong_data"" && <>""Slave2==enquire""))))",1000.0,
+7,"!(X ""Slave4==enquire"" || ([]""User4==wrong_data"" R ([]""User4==wrong_data"" || (X !""Slave3==enquire"" -> ((""Slave4==enquire"" -> ""User1==got"") U (""User2==wrong_data"" && (""Slave4==enquire"" -> ""User1==got"")))))))",22.18744685407728,True
+8,"!(X (!X ""User1==got"" <-> (<>""Slave1==got"" <-> <>(""Slave4==enquire"" && (""Medium==got"" U (""Medium==got"" && []""Slave3==enquire""))))))",1000.0,
+9,"!(!<>((""Medium==broadcast"" R ""Slave2==got"") R ((!""Slave3==enquire"" U (""Slave3==enquire"" || (""Medium==got"" <-> <>""Slave1==enquire""))) || (""Medium==broadcast"" R ""Slave2==got""))))",1000.0,
+10,"!(!([](""Slave4==enquire"" <-> ""Slave4==got"") <-> !(""Slave4==got"" <-> (""User1==got"" U ""User2==wrong_data""))) R (<>""User3==wrong_data"" || !([](""Slave4==enquire"" <-> ""Slave4==got"") <-> !(""Slave4==got"" <-> (""User1==got"" U ""User2==wrong_data"")))))",119.96490047802217,False
+11,"!([]!(""User2==wrong_data"" <-> (<>""User3==wrong_data"" <-> ((""User1==got"" -> ""User3==wrong_data"") || <>""User1==got""))))",124.17973358603194,True
+12,"!((""Medium==broadcast"" R <>""Medium==collision"") && (([](""Slave1==got"" <-> []""User3==wrong_data"") R (""Slave1==enquire"" || [](""Slave1==got"" <-> []""User3==wrong_data""))) -> !""Slave1==enquire""))",1000.0,
+13,"!([](<>(""Medium==got"" R <>""User1==got"") -> ([]<>""User2==got"" U ""User4==wrong_data"")))",1000.0,
+14,"!(X !(""User1==wrong_data"" <-> (""User3==wrong_data"" R <>(!""User1==got"" && ""User2==got""))) U (false R !""Slave1==got""))",242.89248071296606,False
+15,"!(X (<>""User4==wrong_data"" R (<>""User4==wrong_data"" || X ((""Slave2==enquire"" || ""Slave2==got"" || (""User2==wrong_data"" R (""Medium==broadcast"" || ""User2==wrong_data""))) -> <>""Slave2==enquire""))))",1000.0,
+16,"!((!""User4==got"" && (""Slave1==got"" -> ""Slave3==enquire"")) U (!""User4==got"" && (""Slave1==got"" -> ""Slave3==enquire"") && ([]<>""Medium==collision"" R !""User3==got"")))",1000.0,
+17,"!([](true U (""Slave1==enquire"" && ""Slave3==enquire"")))",122.85355903406162,True
+18,"!((!""Slave3==enquire"" && <>[]""Slave4==enquire"") <-> (""User1==wrong_data"" U (X <>""Slave1==enquire"" R (X ""Slave4==got"" || X <>""Slave1==enquire""))))",185.70390320802107,False
+19,"!(<>((!""Slave4==enquire"" U ""Medium==collision"") -> (!(""User1==wrong_data"" U []!""User4==wrong_data"") R (<>""Medium==broadcast"" || !(""User1==wrong_data"" U []!""User4==wrong_data"")))))",1000.0,
+20,"!(""User4==wrong_data"" || ([]""Slave4==got"" R ([]""Slave4==got"" || (!""Slave3==enquire"" U (!""Slave3==enquire"" && (""Slave1==got"" -> ""User2==got"") && (""User2==wrong_data"" R ""User4==got""))))))",22.708171215024777,True
+21,"!((<>""User4==got"" <-> (""Slave1==enquire"" U (""Slave1==enquire"" && <>""Slave3==got""))) U (!(<>[]""User3==wrong_data"" <-> (""Master==wait"" R (""Master==wait"" || ""Slave3==enquire""))) && (<>""User4==got"" <-> (""Slave1==enquire"" U (""Slave1==enquire"" && <>""Slave3==got"")))))",185.72035740106367,False
+22,"!(<>""User1==wrong_data"" || []((!""Slave2==got"" <-> ""User3==wrong_data"") || (!""Slave1==got"" && (""Slave2==enquire"" U ""Slave3==enquire""))))",126.16402618598659,True
+23,"!(<>[]!(((""Slave4==got"" <-> ""User4==got"") <-> <>""User1==wrong_data"") <-> ([]""Master==wait"" R (""User2==wrong_data"" || []""Master==wait""))))",475.86693356593605,False
+24,"!((""Slave3==got"" <-> !(""Medium==collision"" <-> (false R ""Slave1==got""))) U (([]<>""User2==wrong_data"" || (""User4==got"" U (""Medium==collision"" && ""User4==got""))) && (""Slave3==got"" <-> !(""Medium==collision"" <-> (false R ""Slave1==got"")))))",1000.0,

@@ -1,0 +1,4 @@
+,formula,time,result
+0,"!(![]<>(""Consumer==consume""))",171.77956190507393,False
+1,"!(<>(""Consumer==consume""))",104.99129583896138,False
+2,"!(([]<>(""Medium==dataOk"") && []<>(""Medium==nakOk"")) -> []<>(""Consumer==consume""))",496.3764457339421,False

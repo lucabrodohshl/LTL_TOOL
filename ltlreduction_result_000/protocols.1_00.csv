@@ -1,0 +1,5 @@
+,formula,time,result
+0,"!(<>((""Consumer==consume0"") || (""Consumer==consume1"")))",0.014720800099894404,False
+1,"!(![]<>((""Consumer==consume0"") || (""Consumer==consume1"")))",0.01636025297921151,True
+2,"!(!(((""Producer==ready"") U (""Producer==produce0"")) -> ((""Consumer==consume0"") R ((""Consumer==consume0"") || (""Consumer==got_msg"") || (""Consumer==ready"")))))",0.015528025920502841,False
+3,"!(((""Producer==ready"") U (""Producer==produce0"")) -> ((""Consumer==consume0"") R ((""Consumer==consume0"") || (""Consumer==got_msg"") || (""Consumer==ready""))))",0.015515405917540193,False
