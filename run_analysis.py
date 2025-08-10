@@ -18,10 +18,16 @@ import sys
 import os
 from pathlib import Path
 
+import analysis_config
+
 # Add ltl_reducer to path for imports
 sys.path.append(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'ltl_reducer'))
 
 from ltl_reducer.analyzer import LTLAnalysisOrchestrator
+from ltl_reducer import ComparativeAnalyzer, BreakEvenAnalyzer, create_summary_insights
+
+
+
 
 
 def parse_arguments():
@@ -44,30 +50,6 @@ Examples:
         choices=['standard', 'comprehensive', 'both'],
         default='both',
         help='Type of reduction analysis to run (default: both)'
-    )
-    
-    parser.add_argument(
-        '--benchmark-folder',
-        default='benchmark_000',
-        help='Folder containing benchmark models (default: benchmark_000)'
-    )
-    
-    parser.add_argument(
-        '--results-folder',
-        default='analysis_results',
-        help='Base folder for analysis results (default: analysis_results)'
-    )
-    
-    parser.add_argument(
-        '--optimized-results',
-        default='optimized_results',
-        help='Path to optimized results data (default: optimized_results)'
-    )
-    
-    parser.add_argument(
-        '--show-plots',
-        action='store_true',
-        help='Display plots interactively (default: False, only save plots)'
     )
     
     parser.add_argument(
@@ -99,12 +81,21 @@ Examples:
         action='store_true',
         help='Skip model checking analysis'
     )
-    parser.add_argument(
-        '--mc_analysis_path',
-        default='ltlreduction_timing_summary.csv',
-        help='Path to the model checking timing summary CSV file (default: ltlreduction_timing_summary.csv)'
-    )
+
     
+    parser.add_argument(
+        '--skip-comparative',
+        action='store_true',
+        help='Skip comparative analysis'
+    )
+    parser.add_argument(
+        '--skip-break-even',
+        action='store_true',
+        help='Skip break-even analysis'
+    )
+
+
+
     return parser.parse_args()
 
 
@@ -113,13 +104,13 @@ def validate_inputs(args):
     errors = []
     
     # Check if benchmark folder exists
-    if not args.skip_complexity and not os.path.exists(args.benchmark_folder):
-        errors.append(f"Benchmark folder not found: {args.benchmark_folder}")
-    
+    if not args.skip_complexity and not os.path.exists(analysis_config.BENCHMARK_FOLDER):
+        errors.append(f"Benchmark folder not found: {analysis_config.BENCHMARK_FOLDER}")
+
     # Check if optimized results folder exists
-    if not os.path.exists(args.optimized_results):
-        errors.append(f"Optimized results folder not found: {args.optimized_results}")
-    
+    if not os.path.exists(analysis_config.OPTIMIZED_RESULTS_FOLDER):
+        errors.append(f"Optimized results folder not found: {analysis_config.OPTIMIZED_RESULTS_FOLDER}")
+
     # Check if required files exist for complexity impact
     if not args.skip_impact:
         complexity_timing_path = "complexity_timing_analysis/complexity_timing_analysis.csv"
@@ -149,6 +140,80 @@ def print_banner():
     print("=" * 70)
 
 
+
+def comparative_analysis():
+    """Main execution function."""
+    
+
+    
+    # Initialize analyzer
+    analyzer = ComparativeAnalyzer(
+        save_plots=analysis_config.SAVE_PLOTS,
+        show_plots=analysis_config.SHOW_PLOTS,
+        output_folder=os.path.join(analysis_config.RESULTS_FOLDER,
+            analysis_config.OUTPUT_FOLDER
+        )
+    )
+    
+    # Check if required files exist
+    if not os.path.exists(analysis_config.BASELINE_FILE):
+        print(f"Error: Baseline file '{analysis_config.BASELINE_FILE}' not found.")
+        return
+
+    if not os.path.exists(analysis_config.OPTIMIZED_FILE):
+        print(f"Error: Optimized file '{analysis_config.OPTIMIZED_FILE}' not found.")
+        return
+
+    if not os.path.exists(analysis_config.BENCHMARK_SPECIFIC_FOLDER):
+        print(f"Error: Benchmark specific folder '{analysis_config.BENCHMARK_SPECIFIC_FOLDER}' not found.")
+        return
+    
+    # Run complete analysis
+    analyzer.run_complete_analysis(
+        baseline_file=analysis_config.BASELINE_FILE,
+        optimized_file=analysis_config.OPTIMIZED_FILE,
+        benchmark_specific_folder=analysis_config.BENCHMARK_SPECIFIC_FOLDER
+    )
+
+
+
+
+def break_even_analysis():
+    """Main execution function."""
+    
+    analyzer = BreakEvenAnalyzer(
+        save_plots=analysis_config.SAVE_PLOTS,
+        show_plots=analysis_config.SHOW_PLOTS,
+        output_folder=os.path.join(analysis_config.RESULTS_FOLDER,
+            analysis_config.OUTPUT_FOLDER
+        )
+    )
+    
+    # Check if required files exist
+    required_files = [
+        analysis_config.BASELINE_FILE, 
+        analysis_config.OPTIMIZED_FILE,
+        analysis_config.BENCHMARK_SPECIFIC_FOLDER
+    ]
+    for file_path in required_files:
+        if not os.path.exists(file_path):
+            print(f"Error: Required file/folder '{file_path}' not found.")
+            return
+    
+    # Run break-even analysis
+    analyzer.run_break_even_analysis(
+        baseline_file=analysis_config.BASELINE_FILE,
+        optimized_file=analysis_config.OPTIMIZED_FILE,
+        benchmark_specific_folder=analysis_config.BENCHMARK_SPECIFIC_FOLDER,
+        calculated_summary_file=analysis_config.CALCULATED_SUMMARY_FILE
+    )
+
+
+
+
+
+
+
 def main():
     """Main entry point for the LTL analysis suite."""
     
@@ -165,13 +230,13 @@ def main():
     # Initialize orchestrator
     print(f"\n Initializing LTL Analysis Orchestrator...")
     orchestrator = LTLAnalysisOrchestrator(
-        base_results_folder=args.results_folder,
-        optimized_results_path=args.optimized_results,
-        show_plots=args.show_plots
+        base_results_folder=analysis_config.RESULTS_FOLDER,
+        optimized_results_path=analysis_config.OPTIMIZED_RESULTS_FOLDER,
+        show_plots=analysis_config.SHOW_PLOTS,
     )
     
     # Run individual analyses or complete suite
-    if args.skip_reduction and args.skip_complexity and args.skip_impact and args.skip_mc_analysis:
+    if args.skip_reduction and args.skip_complexity and args.skip_impact and args.skip_mc_analysis and args.skip_comparative:
         print(" Error: All analyses are skipped. Nothing to do.")
         sys.exit(1)
     
@@ -182,7 +247,7 @@ def main():
         results['Reduction Analysis'] = orchestrator.run_reduction_analysis(args.reduction_type)
     
     if not args.skip_complexity:
-        results['Complexity Analysis'] = orchestrator.run_complexity_analysis(args.benchmark_folder)
+        results['Complexity Analysis'] = orchestrator.run_complexity_analysis(analysis_config.BENCHMARK_FOLDER)
     
     if not args.skip_impact:
         print(" Warning: Complexity impact is a to-do.")
@@ -191,9 +256,27 @@ def main():
     
     if not args.skip_mc_analysis:
         results['Model Checking Analysis'] = orchestrator.run_model_checking_analysis(
-            model_checking_path=args.mc_analysis_path
+            model_checking_path=analysis_config.OPTIMIZED_FILE
             )
     
+    if not args.skip_comparative:
+        print(" Running comparative analysis...")
+        comparative_analysis()
+    if not args.skip_break_even:
+        print(" Running break-even analysis...")
+        break_even_analysis()
+    
+    if not args.skip_comparative and not args.skip_break_even:
+        # Create summary insights if both analyses were run
+        print(" Creating summary insights...")
+        create_summary_insights(
+            break_even_data_file=os.path.join(
+                analysis_config.RESULTS_FOLDER,
+                analysis_config.OUTPUT_FOLDER,
+                'break_even_detailed_data.csv'),
+            output_folder=os.path.join(analysis_config.RESULTS_FOLDER,
+                                        analysis_config.OUTPUT_FOLDER)
+        )
     # Generate master summary if we ran any analyses
     if results:
         orchestrator.generate_master_summary(results)
@@ -214,7 +297,7 @@ def main():
             if not success:
                 print(f"      Error: {message}")
         
-        print(f"\n All results saved to: {args.results_folder}")
+        print(f"\n All results saved to: {analysis_config.RESULTS_FOLDER}")
         
         # List generated files if requested
         if args.list_files:

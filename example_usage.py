@@ -5,7 +5,7 @@ This script demonstrates how to use the LTLOptimizer class
 for single benchmark analysis and basic usage patterns.
 """
 
-from ltl_optimizer import LTLOptimizer
+from ltl_reducer import LTLOptimizer
 import os
 import time
 
@@ -14,7 +14,10 @@ def example_single_benchmark():
     """Example: Analyze a single benchmark."""
     
     # Initialize optimizer with visualization enabled for this example
-    optimizer = LTLOptimizer(enable_visualization=False, verbose=True, save_graphs=True)
+    optimizer = LTLOptimizer(
+        enable_visualization=False, 
+        verbose=True, 
+        save_graphs=True)
     
     # Example: Process a single benchmark folder
     benchmark_path = os.path.join("benchmark_000", "anderson.1_000")
@@ -67,7 +70,6 @@ def example_performance_measurement():
 
 
 def main():
-    """Run all examples."""
     
     print("LTL Optimizer Library - Examples")
     print("=" * 50)

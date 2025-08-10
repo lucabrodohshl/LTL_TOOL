@@ -9,9 +9,9 @@ import os
 import time
 import pandas as pd
 from typing import Dict, List
-from ltl_optimizer import LTLOptimizer, OptimizationMetrics
+from ltl_reducer import LTLOptimizer, OptimizationMetrics
 
-START_FROM_BENCHMARK = 120
+START_FROM_BENCHMARK = 0
 def create_detailed_csv_report(results: Dict[str, OptimizationMetrics], result_folder: str):
     """
     Create detailed CSV reports from benchmark results.

@@ -5,12 +5,16 @@ Summary visualization of break-even analysis key findings
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
+import os
 
-def create_summary_insights():
+def create_summary_insights(
+    break_even_data_file='analysis_results/comparative_analysis/break_even_detailed_data.csv',
+    output_folder='analysis_results/comparative_analysis'
+):
     """Create a publication-ready summary of key insights."""
     
     # Load the detailed data
-    df = pd.read_csv('comparative_analysis/break_even_detailed_data.csv')
+    df = pd.read_csv(break_even_data_file)
     
     fig, ((ax1, ax2), (ax3, ax4)) = plt.subplots(2, 2, figsize=(16, 12))
     fig.suptitle('Key Insights: When LTL Optimization Provides Net Benefits', 
@@ -134,8 +138,11 @@ Overhead ratio ≈ Reduction percentage
             bbox=dict(boxstyle="round,pad=0.5", facecolor="lightblue", alpha=0.8))
     
     plt.tight_layout()
-    plt.savefig('comparative_analysis/optimization_insights_summary.png', 
-               dpi=300, bbox_inches='tight')
+    plt.savefig(
+        os.path.join(output_folder,
+        'optimization_insights_summary.png'),
+        dpi=300, bbox_inches='tight'
+    )
     print("Summary insights saved to: comparative_analysis/optimization_insights_summary.png")
     plt.show()
 
