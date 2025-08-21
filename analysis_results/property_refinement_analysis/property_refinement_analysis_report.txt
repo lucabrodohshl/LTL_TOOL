@@ -1,0 +1,40 @@
+
+PROPERTY REFINEMENT VERIFICATION BURDEN ANALYSIS REPORT
+======================================================
+
+RESEARCH QUESTION: To what extent can property refinement reduce 
+the verification burden in practice?
+
+OVERALL FINDINGS:
+- Total benchmarks analyzed: 142
+- Total properties examined: 3,628.0
+- Total properties eliminated: 1,294.0
+- Overall reduction rate: 35.7%
+
+REDUCTION DISTRIBUTION:
+- Mean reduction: 36.2%
+- Median reduction: 50.0%
+- Standard deviation: 24.2%
+- Maximum reduction: 91.7%
+
+PRACTICAL IMPACT THRESHOLDS:
+- Benchmarks with ≥25% reduction: 92/142 (64.8%)
+- Benchmarks with ≥50% reduction: 79/142 (55.6%)
+- Benchmarks with ≥75% reduction: 1/142 (0.7%)
+
+CATEGORY-SPECIFIC ANALYSIS:
+- Comm. Protocols: 25.0% avg reduction (27 benchmarks, 53 properties eliminated)
+- Dist. Algorithms: 19.3% avg reduction (20 benchmarks, 238 properties eliminated)
+- MC Examples: 37.5% avg reduction (26 benchmarks, 486 properties eliminated)
+- Mutual Exclusion: 51.4% avg reduction (45 benchmarks, 166 properties eliminated)
+- Scheduling: 33.0% avg reduction (24 benchmarks, 351 properties eliminated)
+
+CONCLUSION:
+Property refinement demonstrates significant practical impact in reducing 
+verification burden, with 35.7% overall reduction across 
+142 diverse benchmarks. The majority of benchmarks 
+(64.8%) achieve meaningful reduction 
+(≥25%), indicating broad applicability across different verification domains.
+
+Generated graphs provide quantitative evidence for the effectiveness of 
+property refinement in practical verification scenarios.

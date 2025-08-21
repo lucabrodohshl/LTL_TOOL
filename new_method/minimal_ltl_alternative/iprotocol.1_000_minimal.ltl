@@ -1,0 +1,3 @@
+GF"Consumer==consume"
+G!"Consumer==consume"
+G(F"Medium==dataOk" & F"Medium==nakOk" & FG!"Consumer==consume")

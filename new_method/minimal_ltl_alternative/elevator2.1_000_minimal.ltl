@@ -1,0 +1,5 @@
+G(!"req[1]==1" | (!"p==1" U ("cabin==open" M "p==1")))
+F("req[0]==1" & ("p==0" R (!"p==0" R ("p==0" R (!"cabin==open" W !"p==0")))))
+FG"p==1"
+G(!"req[0]==1" | (!"p==0" U ("p==0" U (!"p==0" U ("cabin==open" M "p==0")))))
+F("req[1]==1" & G(!"cabin==open" | !"p==1"))

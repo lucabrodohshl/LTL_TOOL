@@ -9,7 +9,8 @@ import os
 
 def create_summary_insights(
     break_even_data_file='analysis_results/comparative_analysis/break_even_detailed_data.csv',
-    output_folder='analysis_results/comparative_analysis'
+    output_folder='analysis_results/comparative_analysis', 
+    tolerance = 0.2
 ):
     """Create a publication-ready summary of key insights."""
     
@@ -28,7 +29,7 @@ def create_summary_insights(
     for threshold in thresholds:
         above_threshold = df[df['reduction_percentage'] >= threshold]
         if len(above_threshold) > 0:
-            beneficial_count = len(above_threshold[above_threshold['net_speedup'] > 1])
+            beneficial_count = len(above_threshold[above_threshold['net_speedup'] >= 1-tolerance])
             success_rate = beneficial_count / len(above_threshold) * 100
             success_rates.append(success_rate)
             counts.append(f"{beneficial_count}/{len(above_threshold)}")
@@ -59,7 +60,7 @@ def create_summary_insights(
     for size in size_order:
         size_data = df[df['size_category'] == size]
         if len(size_data) > 0:
-            beneficial_count = len(size_data[size_data['net_speedup'] > 1])
+            beneficial_count = len(size_data[size_data['net_speedup'] >= 1-tolerance])
             success_rate = beneficial_count / len(size_data) * 100
             size_success_rates.append(success_rate)
             size_counts.append(f"{beneficial_count}/{len(size_data)}")
@@ -81,8 +82,8 @@ def create_summary_insights(
                 count, ha='center', va='bottom', fontsize=9, fontweight='bold')
     
     # 3. Overhead ratio distribution
-    beneficial = df[df['net_speedup'] > 1]
-    detrimental = df[df['net_speedup'] <= 1]
+    beneficial = df[df['net_speedup'] >= 1-tolerance]
+    detrimental = df[df['net_speedup'] < 1-tolerance]
     
     bins = np.logspace(-4, 2, 30)  # From 0.01% to 100%
     

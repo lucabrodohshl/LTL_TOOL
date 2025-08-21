@@ -19,13 +19,13 @@ plt.style.use('default')
 plt.rcParams.update({
     'font.size': 11,
     'axes.titlesize': 13,
-    'axes.labelsize': 12,
-    'xtick.labelsize': 10,
-    'ytick.labelsize': 10,
-    'legend.fontsize': 10,
+    'axes.labelsize': 9,
+    'xtick.labelsize': 9,
+    'ytick.labelsize': 9,
+    'legend.fontsize': 9,
     'figure.titlesize': 15,
     'lines.linewidth': 2,
-    'lines.markersize': 6
+    'lines.markersize': 3
 })
 
 try:
@@ -228,7 +228,7 @@ class BreakEvenAnalyzer:
         
         return pd.DataFrame(comprehensive_data)
     
-    def create_break_even_analysis(self, df: pd.DataFrame) -> None:
+    def create_break_even_analysis(self, df: pd.DataFrame, tolerance = 0.2) -> None:
         """
         Create comprehensive break-even analysis visualization.
         """
@@ -237,14 +237,14 @@ class BreakEvenAnalyzer:
                     fontsize=16, fontweight='bold')
         
         # 1. Reduction percentage vs net speedup
-        beneficial = df[df['net_speedup'] > 1]
-        detrimental = df[df['net_speedup'] <= 1]
+        beneficial = df[df['net_speedup'] >= 1- tolerance]
+        detrimental = df[df['net_speedup'] < 1- tolerance]
         
         ax1.scatter(beneficial['reduction_percentage'], beneficial['net_speedup'], 
                    alpha=0.7, s=80, color='green', label=f'Beneficial ({len(beneficial)})')
         ax1.scatter(detrimental['reduction_percentage'], detrimental['net_speedup'], 
                    alpha=0.7, s=80, color='red', label=f'Detrimental ({len(detrimental)})')
-        
+        #set scale to log
         ax1.axhline(y=1, color='black', linestyle='--', linewidth=2, label='Break-even')
         ax1.set_xlabel('Reduction Percentage (%)')
         ax1.set_ylabel('Net Speedup (including overhead)')
@@ -252,6 +252,38 @@ class BreakEvenAnalyzer:
         ax1.legend()
         ax1.grid(True, alpha=0.3)
         
+        #create a function that plots exactly the same shit in another plot (not as a subplot) and saves it
+        def save_ax1_as_individual_plot():
+            fig, ax = plt.subplots(figsize=(5, 2.6))
+            ax.scatter(beneficial['reduction_percentage'], beneficial['net_speedup'], 
+                       alpha=0.7, s=80, color='#1b9e77',marker= ".", label=f'Beneficial ({len(beneficial)})')
+            ax.scatter(detrimental['reduction_percentage'], detrimental['net_speedup'], 
+                       alpha=0.7, s=80, color='#d95f02',marker= "1", label=f'Detrimental ({len(detrimental)})')
+            ax.axhline(y=1, color='gray', linestyle='-.', linewidth=2, label='Break-even', alpha=0.5)
+            ax.set_xlabel('Property Reduction Percentage', fontsize=9)
+            ax.set_ylabel('Net Efficiency Gain', fontsize=9)
+            #set legend font to 9
+            #ax.set_yscale("symlog", linthresh=70)
+            ax.legend(fontsize=9)
+            ax.grid(False)
+            # Add trend line
+            if HAS_SCIPY and len(df) > 3:
+                slope, intercept, r_value, p_value, std_err = stats.linregress(df['reduction_percentage'], df['net_speedup'])
+                line_x = np.linspace(df['reduction_percentage'].min(), df['reduction_percentage'].max(), 100)
+                line_y = slope * line_x + intercept
+                ax.plot(line_x, line_y, '#8172B3', linestyle='-', linewidth=2, alpha=0.9, 
+                        label=f'Trend (R²={r_value**2:.3f})')
+                ax.legend()
+
+            fig.savefig(os.path.join(self.output_folder, 'break_even_analysisax1.pgf'), 
+                       dpi=300, bbox_inches='tight')
+            fig.savefig(os.path.join(self.output_folder, 'break_even_analysisax1.png'), 
+                       dpi=300, bbox_inches='tight')
+
+
+        #if save_plot, then save ax1_as_individual_plot
+        
+
         # Add trend line
         if HAS_SCIPY and len(df) > 3:
             slope, intercept, r_value, p_value, std_err = stats.linregress(df['reduction_percentage'], df['net_speedup'])
@@ -265,18 +297,35 @@ class BreakEvenAnalyzer:
         size_order = ['Tiny', 'Small', 'Medium', 'Large']
         size_colors = {'Tiny': 'lightblue', 'Small': 'orange', 'Medium': 'lightgreen', 'Large': 'purple'}
         
-        for size in size_order:
-            size_data = df[df['size_category'] == size]
-            if not size_data.empty:
-                ax2.scatter(size_data['overhead_ratio'] * 100, size_data['net_speedup'], 
-                           alpha=0.7, s=80, color=size_colors[size], label=f'{size} ({len(size_data)})')
-        
+        #for size in size_order:
+        #    size_data = df[df['size_category'] == size]
+        #    if not size_data.empty:
+        #        ax2.scatter(size_data['overhead_ratio'] * 100, size_data['net_speedup'], 
+        #                   alpha=0.7, s=80, color=size_colors[size], label=f'{size} ({len(size_data)})')
+        #
+        ax2.scatter(beneficial['reduction_percentage'], beneficial['net_speedup'], 
+                   alpha=0.7, s=80, color='green', label=f'Beneficial ({len(beneficial)})')
+        ax2.scatter(detrimental['reduction_percentage'], detrimental['net_speedup'], 
+                   alpha=0.7, s=80, color='red', label=f'Detrimental ({len(detrimental)})')
+        #set scale to log
         ax2.axhline(y=1, color='black', linestyle='--', linewidth=2, label='Break-even')
-        ax2.set_xlabel('Overhead Ratio (%)')
-        ax2.set_ylabel('Net Speedup')
-        ax2.set_title('Problem Size vs Optimization Overhead')
+        ax2.set_xlabel('Reduction Percentage (%)')
+        ax2.set_ylabel('Net Speedup (including overhead)')
+        ax2.set_title('Reduction Percentage vs Net Performance')
         ax2.legend()
         ax2.grid(True, alpha=0.3)
+        #save only ax2 as a single plot
+        # Get the position of ax1 in figure coordinates
+
+
+        # Add trend line
+        if HAS_SCIPY and len(df) > 3:
+            slope, intercept, r_value, p_value, std_err = stats.linregress(df['reduction_percentage'], df['net_speedup'])
+            line_x = np.linspace(df['reduction_percentage'].min(), df['reduction_percentage'].max(), 100)
+            line_y = slope * line_x + intercept
+            ax2.plot(line_x, line_y, 'blue', linestyle='-', linewidth=2, alpha=0.7, 
+                    label=f'Trend (R²={r_value**2:.3f})')
+            ax2.legend()
         
         # 3. Baseline time vs benefit analysis
         ax3.scatter(df['baseline_time'], df['time_saved_net'], alpha=0.7, s=80)
@@ -295,6 +344,7 @@ class BreakEvenAnalyzer:
         ax3.set_ylabel('Net Time Saved (seconds)')
         ax3.set_title('Baseline Time vs Net Benefit')
         ax3.set_xscale('log')
+        #ax3.set_yscale('log')
         ax3.legend()
         ax3.grid(True, alpha=0.3)
         
@@ -343,8 +393,10 @@ class BreakEvenAnalyzer:
             plt.show()
         else:
             plt.close()
+        if self.save_plots:
+            save_ax1_as_individual_plot()
     
-    def create_detailed_threshold_analysis(self, df: pd.DataFrame) -> None:
+    def create_detailed_threshold_analysis(self, df: pd.DataFrame, tolerance = 0.2) -> None:
         """
         Create detailed analysis of when optimization is beneficial.
         """
@@ -353,8 +405,8 @@ class BreakEvenAnalyzer:
                     fontsize=16, fontweight='bold')
         
         # 1. Reduction percentage distribution by outcome
-        beneficial = df[df['net_speedup'] > 1]
-        detrimental = df[df['net_speedup'] <= 1]
+        beneficial = df[df['net_speedup'] >= 1- tolerance]
+        detrimental = df[df['net_speedup'] < 1- tolerance]
         
         ax1.hist(beneficial['reduction_percentage'], bins=20, alpha=0.7, 
                 color='green', label=f'Beneficial (n={len(beneficial)})', density=True)
@@ -429,7 +481,7 @@ class BreakEvenAnalyzer:
         ax4.axis('off')
         
         # Calculate key thresholds
-        beneficial_mask = df['net_speedup'] > 1
+        beneficial_mask = df['net_speedup'] >= 1- tolerance
         
         avg_reduction_beneficial = df[beneficial_mask]['reduction_percentage'].mean()
         avg_reduction_detrimental = df[~beneficial_mask]['reduction_percentage'].mean()
@@ -477,7 +529,7 @@ RECOMMENDATIONS:
         else:
             plt.close()
     
-    def generate_break_even_report(self, df: pd.DataFrame) -> None:
+    def generate_break_even_report(self, df: pd.DataFrame, tolerance=0.2) -> None:
         """
         Generate comprehensive break-even analysis report.
         """
@@ -485,8 +537,8 @@ RECOMMENDATIONS:
         print("BREAK-EVEN ANALYSIS REPORT")
         print("=" * 80)
         
-        beneficial = df[df['net_speedup'] > 1]
-        detrimental = df[df['net_speedup'] <= 1]
+        beneficial = df[df['net_speedup'] >= 1- tolerance]
+        detrimental = df[df['net_speedup'] < 1- tolerance]
         
         print(f"\nOverall Performance:")
         print(f"  Total benchmarks: {len(df)}")
@@ -521,7 +573,7 @@ RECOMMENDATIONS:
         for threshold in [10, 20, 30, 40, 50]:
             above_threshold = df[df['reduction_percentage'] >= threshold]
             if not above_threshold.empty:
-                beneficial_count = len(above_threshold[above_threshold['net_speedup'] > 1])
+                beneficial_count = len(above_threshold[above_threshold['net_speedup'] >= 1- tolerance])
                 success_rate = beneficial_count / len(above_threshold) * 100
                 print(f"  ≥{threshold}% reduction: {success_rate:.1f}% success rate ({beneficial_count}/{len(above_threshold)})")
         
@@ -536,7 +588,8 @@ RECOMMENDATIONS:
     def run_break_even_analysis(self, baseline_file: str = "baseline_timing_summary.csv",
                                optimized_file: str = "ltlreduction_timing_summary.csv",
                                benchmark_specific_folder: str = "optimized_results/benchmark_specific",
-                               calculated_summary_file: str = "optimized_results/calculated_benchmark_summary.csv") -> None:
+                               calculated_summary_file: str = "optimized_results/calculated_benchmark_summary.csv", 
+                               tolerance = 0.2) -> None:
         """
         Run complete break-even analysis.
         """
@@ -550,11 +603,11 @@ RECOMMENDATIONS:
         print("\nGenerating break-even visualizations...")
         
         # Create visualizations
-        self.create_break_even_analysis(df)
-        self.create_detailed_threshold_analysis(df)
+        self.create_break_even_analysis(df, tolerance = tolerance)
+        self.create_detailed_threshold_analysis(df,tolerance = tolerance)
         
         # Generate report
-        self.generate_break_even_report(df)
+        self.generate_break_even_report(df, tolerance = tolerance)
         
         print(f"\nBreak-even analysis complete! Results saved to: {self.output_folder}")
 

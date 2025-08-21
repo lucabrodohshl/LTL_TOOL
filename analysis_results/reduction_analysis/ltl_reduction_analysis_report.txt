@@ -1,7 +1,7 @@
 ================================================================================
 LTL REDUCTION ANALYSIS REPORT
 ================================================================================
-Generated: 2025-08-10 11:00:04
+Generated: 2025-08-19 15:54:51
 Total Benchmarks Analyzed: 142
 
 OVERALL STATISTICS
@@ -10,8 +10,8 @@ Total formulas processed: 3,628
 Total original formula count: 3,628
 Total optimized formula count: 2,334
 Overall reduction achieved: 35.67%
-Total processing time: 67045.50 seconds
-Average time per formula: 18.480017 seconds
+Total processing time: 67045.51 seconds
+Average time per formula: 18.480018 seconds
 
 ZERO REDUCTION ANALYSIS
 ----------------------------------------
@@ -76,7 +76,7 @@ Small (5-10):
   Benchmarks: 94
   Total formulas: 654
   Average reduction: 43.8%
-  Average time per formula: 0.001001s
+  Average time per formula: 0.001006s
   Zero reduction cases: 8
 
 Tiny (≤4):

@@ -57,7 +57,7 @@ def create_detailed_csv_report(results: Dict[str, OptimizationMetrics], result_f
     print(f"Performance analysis saved to: {performance_path}")
 
 
-def create_csv_summary(results: Dict[str, OptimizationMetrics], output_file: str = "benchmark_summary.csv"):
+def create_csv_summary(results: Dict[str, OptimizationMetrics], output_file: str = "benchmark_summary_big_spot.csv"):
     """
     Create a CSV summary of benchmark results for easy analysis.
     
@@ -124,9 +124,9 @@ def main():
     
     # Configuration - using same folder structure as example_usage.py
     BENCHMARK_FOLDER = "benchmark_000"
-    LTL_OUTPUT_FOLDER = "minimal_ltl"
-    GRAPH_OUTPUT_FOLDER = "minimal_graph"  
-    RESULT_FOLDER = "optimized_results"
+    LTL_OUTPUT_FOLDER = "minimal_ltl_big_spot"
+    GRAPH_OUTPUT_FOLDER = "minimal_graph_big_spot"  
+    RESULT_FOLDER = "optimized_results_big_spot"
     BENCHMARK_SPECIFIC_FOLDER = os.path.join(RESULT_FOLDER, "benchmark_specific")
     
     # Create output directories
@@ -169,7 +169,7 @@ def main():
     # CSV summary
     df = create_csv_summary(
         results, 
-        os.path.join(RESULT_FOLDER, "benchmark_summary.csv")
+        os.path.join(RESULT_FOLDER, "benchmark_summary_big_spot.csv")
     )
     
     # Create detailed CSV report instead of JSON

@@ -9,9 +9,9 @@ median_reduction_per_benchmark,50.0
 max_reduction,91.66666666666666
 min_reduction,0.0
 std_reduction,24.152963912257434
-total_processing_time,67045.50225496292
-avg_processing_time,472.1514243307248
-avg_time_per_formula,0.8453661811001432
+total_processing_time,67045.50589132309
+avg_processing_time,472.151449938895
+avg_time_per_formula,0.8453690264523877
 fastest_benchmark,extinction.2_000
 slowest_benchmark,leader-election.3_000
 total_equivalence_classes,157.0

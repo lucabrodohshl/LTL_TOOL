@@ -172,7 +172,8 @@ def comparative_analysis():
     analyzer.run_complete_analysis(
         baseline_file=analysis_config.BASELINE_FILE,
         optimized_file=analysis_config.OPTIMIZED_FILE,
-        benchmark_specific_folder=analysis_config.BENCHMARK_SPECIFIC_FOLDER
+        benchmark_specific_folder=analysis_config.BENCHMARK_SPECIFIC_FOLDER, 
+        tolerance = analysis_config.TOLERANCE
     )
 
 
@@ -205,12 +206,105 @@ def break_even_analysis():
         baseline_file=analysis_config.BASELINE_FILE,
         optimized_file=analysis_config.OPTIMIZED_FILE,
         benchmark_specific_folder=analysis_config.BENCHMARK_SPECIFIC_FOLDER,
-        calculated_summary_file=analysis_config.CALCULATED_SUMMARY_FILE
+        calculated_summary_file=analysis_config.CALCULATED_SUMMARY_FILE, 
+        tolerance = analysis_config.TOLERANCE
     )
+    
+    # Run NEG analysis
+    create_neg_analysis()
 
 
+def create_neg_analysis():
+    """
+    Create Net Efficiency Gain (NEG) analysis.
+    
+    NEG = T_baseline / (T_optimized + T_refinement)
+    
+    This function creates visualizations showing NEG vs number of formulas
+    to help understand the break-even analysis performance characteristics.
+    """
+    import pandas as pd
+    import matplotlib.pyplot as plt
+    import numpy as np
+    
+    # Path to the break-even detailed data
+    break_even_file = os.path.join(
+        analysis_config.RESULTS_FOLDER,
+        analysis_config.OUTPUT_FOLDER,
+        'break_even_detailed_data.csv'
+    )
+    
+    if not os.path.exists(break_even_file):
+        print(f"Break-even data file not found: {break_even_file}")
+        print("Please run break-even analysis first.")
+        return
+    
+    print(f"Loading break-even data from: {break_even_file}")
+    
+    try:
+        df = pd.read_csv(break_even_file)
+        
+        # Verify required columns exist
+        required_columns = ['mc_speedup', 'original_count', 'baseline_props']
+        missing_columns = [col for col in required_columns if col not in df.columns]
+        if missing_columns:
+            print(f"Missing required columns: {missing_columns}")
+            print(f"Available columns: {list(df.columns)}")
+            return
+        
+        # Create the NEG analysis plot
+        plt.figure(figsize=(12, 8))
+        
+        # Use original_count (number of formulas) vs net_speedup (NEG)
+        x = df['original_count']
+        y = df['mc_speedup']
+        
+        plt.scatter(x, y, alpha=0.7, s=60, color='steelblue')
+        
+        plt.xlabel('Number of Formulas', fontsize=12)
+        plt.ylabel('Net Efficiency Gain (NEG)', fontsize=12)
+        plt.title('Net Efficiency Gain vs Number of Formulas\n' + 
+                 r'NEG = $T_{baseline} / (T_{optimized} + T_{refinement})$', 
+                 fontsize=14, fontweight='bold')
+        
+        # Set y-axis to log scale if there's a wide range of values
+        
+        plt.yscale('log')
+        plt.xscale('log')
+        plt.ylabel('Net Efficiency Gain (NEG) - Log Scale', fontsize=12)
+        
+        plt.grid(True, alpha=0.3)
+        plt.legend(fontsize=10)
+        
 
+        plt.tight_layout()
+        
+        # Save the plot
+        output_folder = os.path.join(analysis_config.RESULTS_FOLDER, analysis_config.OUTPUT_FOLDER)
+        if not os.path.exists(output_folder):
+            os.makedirs(output_folder)
+        
+        output_path = os.path.join(output_folder, 'neg_vs_formulas.png')
+        plt.savefig(output_path, dpi=300, bbox_inches='tight')
+        print(f"NEG analysis plot saved to: {output_path}")
+        
+        # Also save as PGF for LaTeX if requested
+        if analysis_config.SAVE_PLOTS:
+            pgf_path = os.path.join(output_folder, 'neg_vs_formulas.pgf')
+            plt.savefig(pgf_path, dpi=300, bbox_inches='tight')
+            print(f"NEG analysis plot (PGF) saved to: {pgf_path}")
+        
+        if analysis_config.SHOW_PLOTS:
+            plt.show()
+        else:
+            plt.close()
+        
 
+        
+    except Exception as e:
+        print(f"Error in NEG analysis: {str(e)}")
+        import traceback
+        traceback.print_exc()
 
 
 
@@ -275,7 +369,8 @@ def main():
                 analysis_config.OUTPUT_FOLDER,
                 'break_even_detailed_data.csv'),
             output_folder=os.path.join(analysis_config.RESULTS_FOLDER,
-                                        analysis_config.OUTPUT_FOLDER)
+                                        analysis_config.OUTPUT_FOLDER),
+            tolerance = analysis_config.TOLERANCE
         )
     # Generate master summary if we ran any analyses
     if results:

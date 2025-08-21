@@ -1,0 +1,35 @@
+================================================================================
+LTL ANALYSIS ORCHESTRATOR - MASTER SUMMARY REPORT
+================================================================================
+
+Analysis Session: 20250820_163011
+Generated: 2025-08-20 16:30:34
+Base Results Folder: analysis_results
+
+ANALYSIS RESULTS OVERVIEW:
+----------------------------------------
+Model Checking Analysis  :  SUCCESS
+
+SUMMARY: 1/1 analyses completed successfully
+
+FOLDER STRUCTURE:
+----------------------------------------
+reduction_analysis  : analysis_results/reduction_analysis (20 files)
+complexity_analysis : analysis_results/complexity_analysis (2 files)
+complexity_impact   : analysis_results/complexity_impact (0 files)
+summary_reports     : analysis_results/summary_reports (71 files)
+model_checking_analysis: analysis_results/model_checking_analysis (4 files)
+
+DETAILED ANALYSIS DESCRIPTIONS:
+----------------------------------------
+1. Reduction Analysis: LTL formula reduction performance metrics,
+   timing analysis, outliers detection, and comprehensive visualizations.
+
+2. Complexity Analysis: Formula complexity metrics including structural,
+   temporal, and automata-based complexity measurements.
+
+3. Complexity Impact: Professional analysis of how complexity affects
+   optimization performance and processing time.
+
+For detailed results, see the respective analysis folders.
+================================================================================

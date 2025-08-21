@@ -25,6 +25,7 @@ from .analyzers.break_even_analysis import BreakEvenAnalyzer
 from .analyzers.comparative_analysis import ComparativeAnalyzer
 from .analyzers.create_insights_summary import create_summary_insights
 from .optimizer import LTLOptimizer,OptimizationMetrics
+from .ltl_optimizer_alternative import LTLOptimizerAlternative,EnhancedOptimizationMetrics
 __version__ = "1.0.0"
 __author__ = "LTL Analysis Suite"
-__all__ = ["LTLAnalysisOrchestrator", "create_new_minimal_folder", "BreakEvenAnalyzer", "ComparativeAnalyzer", "create_summary_insights", "LTLOptimizer", "OptimizationMetrics"]
+__all__ = ["LTLAnalysisOrchestrator", "create_new_minimal_folder", "BreakEvenAnalyzer", "ComparativeAnalyzer", "create_summary_insights", "LTLOptimizer", "OptimizationMetrics", "LTLOptimizerAlternative", "EnhancedOptimizationMetrics"]

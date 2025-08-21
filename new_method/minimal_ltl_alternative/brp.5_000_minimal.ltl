@@ -1,0 +1,4 @@
+F("Producer==wait_result" & G!"Producer==ready")
+F("Producer==wait_result" & G!"Producer==check")
+G(!"Producer==wait_result" | F"Producer==ready")
+G(!"Producer==wait_result" | F"Producer==check")

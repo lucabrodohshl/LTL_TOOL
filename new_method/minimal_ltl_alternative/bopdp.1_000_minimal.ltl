@@ -1,0 +1,8 @@
+F("sleeping==0" & (!"sleeping==0" M "sleep_op==0"))
+G(!"sleeping==0" | ("sleeping==0" W (!"ap_interrupt==1" & !"lsl_interrupt==1")))
+G(!"sleeping==0" | ("sleeping==0" W !"sleep_op==0"))
+G(!"IOP==actv" | (!"IOP==noise" W "IOP==stand_by"))
+F("IOP==stand_by" & ((!"IOP==back_to_actv" & !"IOP==now_wait") U ("IOP==actv" & !"IOP==back_to_actv" & !"IOP==now_wait")))
+G(!"IOP==stand_by" | (("IOP==back_to_actv" | "IOP==now_wait") R (!"IOP==actv" | "IOP==back_to_actv" | "IOP==now_wait")))
+F("IOP==actv" & ("IOP==noise" M !"IOP==stand_by"))
+F("sleeping==0" & (!"sleeping==0" M ("ap_interrupt==1" | "lsl_interrupt==1")))

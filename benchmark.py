@@ -10,12 +10,13 @@ from tqdm import tqdm
 import concurrent.futures
 import multiprocessing
 SRC_FOLDER = "./minimal_benchmarks"
-CSV_OUTPUT = "ltlreduction_timing_summary.csv"
+CSV_OUTPUT = "test_ltlreduction_timing_summary.csv"
 RES_FOLDER = "./ltlreduction_result"
 model_temp_dir = "models_dir"
 TIMEOUTS = 1000
-
-
+DO_ONLY = "phils.1_000"
+START=0
+END = 142
 
 def make_unique_folder(base_path, folder = None):
     """
@@ -95,8 +96,10 @@ dir_path = os.path.dirname(os.path.realpath(__file__))
 
 df = pd.DataFrame(columns =["Benchmark", "Num Properties", "Total Elapsed Time (seconds)","Average Elapsed Time (seconds)",  "Timeouts"])
 
-for folder in tqdm(sorted(os.listdir(SRC_FOLDER)), position=0):
+for folder in tqdm(sorted(os.listdir(SRC_FOLDER )[START:END]), position=0):
     if folder.startswith('.'):  # skip hidden/system files
+        continue
+    if folder != DO_ONLY and DO_ONLY is not None:
         continue
     timeouts = 0
     timings = {}

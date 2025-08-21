@@ -16,6 +16,8 @@ from typing import Optional, Tuple, Dict, List
 from pathlib import Path
 from datetime import datetime
 import warnings
+from mpl_toolkits.axes_grid1.inset_locator import inset_axes
+from matplotlib.patches import Rectangle
 warnings.filterwarnings('ignore')
 
 # Try to import seaborn for enhanced visualizations
@@ -59,13 +61,15 @@ class LTLReductionAnalyzer:
         # Set style for publication-quality plots
         plt.style.use('default')
         plt.rcParams.update({
-            'font.size': 10,
-            'axes.titlesize': 12,
-            'axes.labelsize': 11,
-            'xtick.labelsize': 9,
-            'ytick.labelsize': 9,
-            'legend.fontsize': 9,
-            'figure.titlesize': 14
+            'font.size': 8,
+            'axes.titlesize': 8,
+            'axes.labelsize': 8,
+            'xtick.labelsize': 8,
+            'ytick.labelsize': 8,
+            'legend.fontsize': 8,
+            'figure.titlesize': 8, 
+            'legend.fontsize': 8
+           
         })
         
         if HAS_SEABORN:
@@ -292,6 +296,90 @@ class LTLReductionAnalyzer:
         else:
             plt.close()
     
+
+    def create_zero_vs_nonzero_scatter(self, df: pd.DataFrame) -> None:
+        """
+        Create a single scatter plot comparing zero reduction vs non-zero reduction cases.
+        
+        Args:
+            df: DataFrame with benchmark data
+        """
+        zero_reduction = df[df['Reduction_Percentage'] == 0.0].copy()
+        non_zero = df[df['Reduction_Percentage'] > 0.0].copy()
+        
+        plt.figure(figsize=(6, 4))
+        
+        # Plot zero reduction cases with larger, more prominent markers
+        plt.scatter(zero_reduction['Total_Formulas'], zero_reduction['Total_Time'],
+                s=80, alpha=0.8, color=self.colors['zero_reduction'], 
+                edgecolors='white', linewidth=1, label=f'Zero Reduction (n={len(zero_reduction)})')
+        
+        # Plot non-zero reduction cases with smaller markers
+        plt.scatter(non_zero['Total_Formulas'], non_zero['Total_Time'],
+                s=40, alpha=0.6, color=self.colors['primary'], 
+                label=f'Non-Zero Reduction (n={len(non_zero)})')
+        
+        # Add trend line analysis
+        valid_mask = (df['Total_Formulas'] > 0) & (df['Total_Time'] > 0)
+        if valid_mask.sum() > 1:
+            log_formulas = np.log(df['Total_Formulas'][valid_mask])
+            log_times = np.log(df['Total_Time'][valid_mask])
+            z = np.polyfit(log_formulas, log_times, 1)
+            p = np.poly1d(z)
+            sorted_formulas = np.sort(df['Total_Formulas'][valid_mask])
+            plt.plot(sorted_formulas, np.exp(p(np.log(sorted_formulas))), 
+                    "r--", alpha=0.8, linewidth=2, label=f'Trend (slope: {z[0]:.2f})', color='darkorange')
+
+        # Create inset for zoomed view
+        
+        plt.xlabel('Number of Formulas', fontsize=12)
+        plt.ylabel('Total Processing Time (seconds)', fontsize=12)
+        #plt.title('Processing Time vs Formula Count: Zero vs Non-Zero Reduction', 
+                #fontsize=14, fontweight='bold')
+        plt.legend(fontsize=11)
+        plt.grid(False, alpha=0.3)
+        #plt.yscale('log')  # Log scale due to wide range of processing times
+        #plt.xscale('symlog', linthresh=10)
+        plt.xscale('log')
+        #plt.xlim(0, 15)
+        # Add some statistics as text annotations
+
+
+
+        if len(zero_reduction) > 0 and len(non_zero) > 0 and False:
+            zero_avg_time = zero_reduction['Total_Time'].mean()
+            nonzero_avg_time = non_zero['Total_Time'].mean()
+            zero_avg_formulas = zero_reduction['Total_Formulas'].mean()
+            nonzero_avg_formulas = non_zero['Total_Formulas'].mean()
+            
+            # Add trend line interpretation
+            if valid_mask.sum() > 1:
+                trend_interpretation = "Superlinear" if z[0] > 1 else "Sublinear" if z[0] < 1 else "Linear"
+                stats_text = f"""Statistics:
+    Zero Reduction: {zero_avg_formulas:.1f} avg formulas, {zero_avg_time:.4f}s avg time
+    Non-Zero Reduction: {nonzero_avg_formulas:.1f} avg formulas, {nonzero_avg_time:.4f}s avg time
+    Trend: {trend_interpretation} scaling (slope: {z[0]:.2f})"""
+            else:
+                stats_text = f"""Statistics:
+    Zero Reduction: {zero_avg_formulas:.1f} avg formulas, {zero_avg_time:.4f}s avg time
+    Non-Zero Reduction: {nonzero_avg_formulas:.1f} avg formulas, {nonzero_avg_time:.4f}s avg time"""
+            
+            plt.text(0.02, 0.98, stats_text, transform=plt.gca().transAxes, 
+                    fontsize=10, verticalalignment='top', 
+                    bbox=dict(boxstyle='round', facecolor='wheat', alpha=0.8))
+        
+        plt.tight_layout()
+        
+        if self.save_plots:
+            plt.savefig(os.path.join(self.output_folder, 'zero_vs_nonzero_scatter.pgf'), dpi=300, bbox_inches='tight')
+            plt.savefig(os.path.join(self.output_folder, 'zero_vs_nonzero_scatter.png'), dpi=300, bbox_inches='tight')
+            print(f"Zero vs Non-Zero scatter plot saved to: {os.path.join(self.output_folder, 'zero_vs_nonzero_scatter.png')}")
+        
+        if self.show_plots:
+            plt.show()
+        else:
+            plt.close()
+
     def create_performance_analysis(self, summary_df: pd.DataFrame) -> None:
         """
         Create detailed performance analysis charts.
@@ -1740,7 +1828,8 @@ class LTLReductionAnalyzer:
         
         print("\n5. Creating no-zero reduction analysis...")
         self.create_no_zero_analysis(df)
-        
+        self.create_zero_vs_nonzero_scatter(df)
+
         print("\n7. Generating detailed report...")
         self.generate_detailed_report(df)
         

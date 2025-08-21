@@ -16,8 +16,8 @@ from typing import Dict, List, Optional, Tuple
 sys.path.append(os.path.join(os.path.dirname(__file__), 'analyzers'))
 
 # Import all analyzers
-from ltl_reduction_analyzer import LTLReductionAnalyzer
-from ltl_complexity_analyzer import LTLComplexityAnalyzer
+from .analyzers.ltl_reduction_analyzer import LTLReductionAnalyzer
+from .analyzers.ltl_complexity_analyzer import LTLComplexityAnalyzer
 from complexity_impact_summary import create_professional_complexity_summary
 from mc_analyzer import ModelCheckingAnalyzer
 

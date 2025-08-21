@@ -9,3 +9,4 @@ OUTPUT_FOLDER = "comparative_analysis"
 CALCULATED_SUMMARY_FILE = "optimized_results/calculated_benchmark_summary.csv"
 SAVE_PLOTS = True
 SHOW_PLOTS = False
+TOLERANCE = 0.03

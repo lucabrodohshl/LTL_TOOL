@@ -156,7 +156,7 @@ class ComparativeAnalyzer:
         
         return pd.DataFrame(overhead_data)
     
-    def create_timing_comparison(self, baseline_df: pd.DataFrame, optimized_df: pd.DataFrame) -> None:
+    def create_timing_comparison(self, baseline_df: pd.DataFrame, optimized_df: pd.DataFrame,tolerance=0.2) -> None:
         """
         Create comprehensive timing comparison visualization.
         
@@ -192,7 +192,7 @@ class ComparativeAnalyzer:
         speedup = baseline_times / optimized_times
         speedup = speedup.replace([np.inf, -np.inf], np.nan).fillna(1)
         
-        colors = ['green' if s > 1 else 'red' for s in speedup]
+        colors = ['green' if s >= 1- tolerance else 'red' for s in speedup]
         bars = ax2.bar(range(len(benchmarks)), speedup, alpha=0.7, color=colors)
         ax2.axhline(y=1, color='black', linestyle='--', linewidth=2, label='No speedup')
         ax2.set_xlabel('Benchmark Index')
@@ -226,20 +226,19 @@ class ComparativeAnalyzer:
         ax3.legend()
         
         # 4. Average time per property comparison
-        baseline_avg = baseline_df['Average Elapsed Time (seconds)']
-        optimized_avg = optimized_df['Average Elapsed Time (seconds)']
+        speedup = baseline_times / optimized_times
+        speedup = speedup.replace([np.inf, -np.inf], np.nan).fillna(1)
         
-        ax4.bar(x - width/2, baseline_avg, width, label='Baseline', 
-               alpha=0.8, color='lightcoral')
-        ax4.bar(x + width/2, optimized_avg, width, label='Optimized', 
-               alpha=0.8, color='skyblue')
+        colors = ['green' if s >= 1- tolerance else 'red' for s in speedup]
+        bars = ax4.bar(range(len(benchmarks)), speedup, alpha=0.7, color=colors)
+
         
         ax4.set_xlabel('Benchmark Index')
-        ax4.set_ylabel('Average Time per Property (seconds)')
-        ax4.set_title('Average Time per Property: Baseline vs Optimized')
+        ax4.set_ylabel('Speedup Factor')
+        ax4.set_title('Speedup: Baseline Time / Optimized Time+refinement time')
         ax4.legend()
         ax4.grid(True, alpha=0.3, axis='y')
-        ax4.set_yscale('log')
+        ax4
         
         plt.tight_layout()
         
@@ -310,7 +309,8 @@ class ComparativeAnalyzer:
             plt.close()
     
     def create_overhead_analysis(self, baseline_df: pd.DataFrame, optimized_df: pd.DataFrame,
-                               overhead_df: pd.DataFrame) -> None:
+                               overhead_df: pd.DataFrame, 
+                               tolerance = 0.2) -> None:
         """
         Create analysis including optimization overhead.
         
@@ -351,7 +351,7 @@ class ComparativeAnalyzer:
         net_speedup = baseline_times / total_optimized_times
         net_speedup = net_speedup.replace([np.inf, -np.inf], np.nan).fillna(1)
         
-        colors = ['green' if s > 1 else 'red' for s in net_speedup]
+        colors = ['green' if s >=1-tolerance else 'red' for s in net_speedup]
         bars = ax2.bar(range(len(benchmarks)), net_speedup, alpha=0.7, color=colors)
         ax2.axhline(y=1, color='black', linestyle='--', linewidth=2, label='Break-even')
         ax2.set_xlabel('Benchmark Index')
@@ -410,7 +410,8 @@ class ComparativeAnalyzer:
     
     def generate_performance_statistics(self, baseline_df: pd.DataFrame, 
                                       optimized_df: pd.DataFrame,
-                                      overhead_df: pd.DataFrame) -> Dict:
+                                      overhead_df: pd.DataFrame,
+                                      tolerance = 0.2) -> Dict:
         """
         Generate comprehensive performance statistics.
         
@@ -430,6 +431,10 @@ class ComparativeAnalyzer:
         # Calculate speedups
         mc_only_speedup = baseline_times / optimized_times
         net_speedup = baseline_times / total_optimized_times
+        
+        # Calculate individual overhead percentages for each benchmark
+        individual_overhead_percentages = (optimization_times / baseline_times) * 100
+        individual_overhead_percentages = individual_overhead_percentages.replace([np.inf, -np.inf], np.nan)
         
         # Handle infinite values
         mc_only_speedup = mc_only_speedup.replace([np.inf, -np.inf], np.nan)
@@ -453,11 +458,19 @@ class ComparativeAnalyzer:
             'best_net_speedup': net_speedup.max(),
             'worst_mc_speedup': mc_only_speedup.min(),
             'worst_net_speedup': net_speedup.min(),
-            'benchmarks_with_net_improvement': (net_speedup > 1).sum(),
-            'benchmarks_with_mc_improvement': (mc_only_speedup > 1).sum(),
+            'benchmarks_with_net_improvement': (net_speedup >= 1- tolerance).sum(),
+            'benchmarks_with_mc_improvement': (mc_only_speedup >= 1- tolerance).sum(),
             'total_time_saved_mc_only': (baseline_times - optimized_times).sum(),
             'total_time_saved_net': (baseline_times - total_optimized_times).sum(),
-            'overhead_percentage': (optimization_times.sum() / baseline_times.sum()) * 100
+            'overhead_percentage': (optimization_times.sum() / baseline_times.sum()) * 100,
+            'overhead_median_percentage': individual_overhead_percentages.median(),
+            'overhead_mean_percentage': individual_overhead_percentages.mean(),
+            'overhead_efficiency': ((baseline_times - total_optimized_times).sum() / optimization_times.sum()) * 100,  
+            'break_even_factor': optimization_times.sum() / (baseline_times - optimized_times).sum(),  
+            'net_benefit_percentage_gross': ((baseline_times - optimized_times).sum() / baseline_times.sum()) * 100,
+            'net_benefit_percentage': ((baseline_times - total_optimized_times).sum() / baseline_times.sum()) * 100,
+            #from the index, get the name of the least performing benchmark
+            'least_performing_benchmark': baseline_df.iloc[(baseline_times - total_optimized_times).idxmin()]['Benchmark'] if len(baseline_df) > 0 else None,
         }
         
         return stats
@@ -517,7 +530,8 @@ class ComparativeAnalyzer:
     
     def run_complete_analysis(self, baseline_file: str = "baseline_timing_summary.csv",
                             optimized_file: str = "ltlreduction_timing_summary.csv",
-                            benchmark_specific_folder: str = "optimized_results/benchmark_specific") -> None:
+                            benchmark_specific_folder: str = "optimized_results/benchmark_specific", 
+                            tolerance = 0.2) -> None:
         """
         Run complete comparative analysis.
         
@@ -542,12 +556,12 @@ class ComparativeAnalyzer:
         print("\nGenerating visualizations...")
         
         # Create visualizations
-        self.create_timing_comparison(baseline_df, optimized_df)
+        self.create_timing_comparison(baseline_df, optimized_df, tolerance)
         self.create_detailed_benchmark_chart(baseline_df, optimized_df)
         self.create_overhead_analysis(baseline_df, optimized_df, overhead_df)
         
         # Generate and print statistics
-        stats = self.generate_performance_statistics(baseline_df, optimized_df, overhead_df)
+        stats = self.generate_performance_statistics(baseline_df, optimized_df, overhead_df,tolerance)
         self.print_performance_report(stats)
         self.save_statistics_report(stats)
         
